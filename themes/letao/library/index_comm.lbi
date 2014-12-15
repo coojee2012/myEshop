@@ -1,0 +1,81 @@
+<?php
+
+if(!function_exists("get_comments")){
+function get_comments($num)
+{
+   $sql = 'SELECT a.*,b.goods_id,b.goods_thumb,b.goods_name FROM '. $GLOBALS['ecs']->table('comment') .
+            ' AS a,'. $GLOBALS['ecs']->table('goods') .'AS b WHERE a.status = 1 AND a.parent_id = 0 and a.comment_type=0 and a.id_value=b.goods_id '.
+            ' ORDER BY a.add_time DESC';
+  if ($num > 0)
+  {
+   $sql .= ' LIMIT ' . $num;
+  }
+  //echo $sql;
+        
+  $res = $GLOBALS['db']->getAll($sql);
+  $comments = array();
+  foreach ($res AS $idx => $row)
+  {
+
+   $comments[$idx]['add_time']       = local_date($GLOBALS['_CFG']['time_format'], $row['add_time']);
+   $comments[$idx]['content']       = $row['content'];
+   $comments[$idx]['id_value']       = $row['id_value'];
+   $comments[$idx]['goods_thumb']  = get_image_path($row['goods_id'], $row['goods_thumb'], true);
+   $comments[$idx]['goods_name']       = $row['goods_name'];
+  }
+  return $comments;
+}
+}
+
+?>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  
+<?php
+   $this->assign('my_comments',get_comments(30));
+?>
+
+
+
+<div class="box">
+<div class="box_1 comm_box">
+<h3><span> 品玉评玉</span><a class="more" href="message.php">更多>></a></h3>
+<div id="artup" style="overflow:hidden; height: 179px;">
+<div id="artup1">
+
+
+<ul  id="artup1ul" >
+<!--{foreach from=$my_comments item=comments}-->
+<li><a href="goods.php?id={$comments.id_value}" target="_blank">・{$comments.content|truncate:100:""}</a></li>
+<!--{/foreach}-->
+</ul>
+</div>
+<div id="artup2"> </div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+var speed=30;
+var ARTUP=document.getElementById('artup');
+var ARTUP1=document.getElementById('artup1');
+var ARTUP2=document.getElementById('artup2');
+var ARTUP1ul=document.getElementById('artup1ul');
+var result = "";
+for(var i=0; i<25; i++) result += ARTUP1ul.innerHTML;
+ARTUP1ul.innerHTML=result
+ARTUP2.innerHTML=ARTUP1.innerHTML
+function Marquee1(){
+if(ARTUP2.offsetHeight-ARTUP.scrollTop<=0)
+ARTUP.scrollTop-=ARTUP1.offsetHeight
+else{
+ARTUP.scrollTop++
+}
+}
+var MyMar1=setInterval(Marquee1,speed)
+ARTUP.onmouseover=function() {clearInterval(MyMar1)}
+ARTUP.onmouseout=function() {MyMar1=setInterval(Marquee1,speed)}
+</script>

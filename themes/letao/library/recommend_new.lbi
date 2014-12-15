@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+<!-- {if $new_goods} -->
+
+<div class="blank"></div>
+
+<div class="new_box">
+<div class="tit">
+<img src="../images/new_tit.gif">
+ 
+ </div>
+<div class="blank5"></div>
+<div class="clearfix goodsBox" style="border:none; padding:0; padding-left:0px;">
+ 
+ 
+ 
+ 
+  <!--{foreach from=$new_goods item=goods name=cat_goods}-->
+  <div class="goodsItem"  <!--{if $smarty.foreach.cat_goods.index mod 4 eq 0}-->
+            style='padding-left:0;'
+            <!-- {/if} -->   >
+ 
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a><br />
+           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+           
+        <font class="market"> 市场价 <del>{$goods.market_price}</del> </font> <br/>
+          
+           <!-- {if $goods.promote_price neq ""} -->
+          售价 <font class="shop_s">{$goods.promote_price}</font>
+          <!-- {else}-->
+          售价 <font class="shop_s">{$goods.shop_price}</font>
+          <!--{/if}--> 
+</div>
+  <!--{/foreach}-->
+  </div> 
+  </div> 
+  <div class="blank"></div>
+
+<!-- {/if} -->

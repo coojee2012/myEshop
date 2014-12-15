@@ -1,0 +1,49 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $brand_list} -->
+<div class="brands">
+
+
+<!--{foreach from=$categories item=cat name=no}-->
+<!-- {if $smarty.foreach.no.iteration<6}-->
+<dl>
+<dt>
+<a href="{$cat.url}">{$cat.name|escape:html}</a>
+<img src="../images/tree{$smarty.foreach.no.iteration}.gif">
+</dt>
+<dd>
+<!--{foreach from=$cat.cat_id item=child name=no1}-->
+<span class="span{$smarty.foreach.no1.iteration}"><a href="{$child.url}">{$child.name|escape:html}</a><b>|</b>
+<font><br/></font>
+</span>
+<!--{/foreach}-->
+</dd>
+</dl>
+<!-- {/if} -->
+<!--{/foreach}--> 
+ 
+ 
+<dl>
+<dt>
+<a href="brand.php">热卖品牌</a>
+<img src="../images/brand_tit.gif">
+</dt>
+<dd>
+<!-- {foreach from=$brand_list item=brand name=no2} -->
+<span class="span{$smarty.foreach.no2.iteration}"><a href="{$brand.url}">{$brand.brand_name|escape:html}</a><b>|</b>
+<font><br/></font>
+</span>
+<!-- {/foreach} -->
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- {/if} -->

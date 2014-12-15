@@ -1,0 +1,629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+<script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/SlideTrans.js"></script>
+<script type="text/javascript">
+function $id(element) {
+  return document.getElementById(element);
+}
+//切屏--是按钮，_v是内容平台，_h是内容库
+function reg(str){
+  var bt=$id(str+"_b").getElementsByTagName("h2");
+  for(var i=0;i<bt.length;i++){
+    bt[i].subj=str;
+    bt[i].pai=i;
+    bt[i].style.cursor="pointer";
+    bt[i].onclick=function(){
+      $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+      for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+        var ison=j==this.pai;
+        _bt.className=(ison?"":"h2bg");
+      }
+    }
+  }
+  $id(str+"_h").className="none";
+  $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+}
+
+function changeAtt(t) {
+t.lastChild.checked='checked';
+for (var i = 0; i<t.parentNode.childNodes.length;i++) {
+        if (t.parentNode.childNodes[i].className == 'cattsel') {
+            t.parentNode.childNodes[i].className = '';
+        }
+    }
+t.className = "cattsel";
+changePrice();
+}
+</script>
+
+
+</head>
+<body class="index_body">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<div class="block clearfix" style="overflow:hidden">
+<!-- TemplateBeginEditable name="首页顶部广告位" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+
+{insert name='ads' id=$ads_id num=$ads_num}
+
+<div class="blank"></div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+
+
+
+
+
+
+
+<div class="index_l" style="float:left; width:187px;">
+
+ <!-- TemplateBeginEditable name="首页左侧区域" -->
+<!-- #BeginLibraryItem "/library/category_tree.lbi" -->
+
+ <img src="../images/category_tit.gif" style="float:left">
+  <div id="category_tree">
+    <!--{foreach from=$categories item=cat name=no}-->
+     <dl>
+     <dt> <img src="../images/tree{$smarty.foreach.no.iteration}.gif"> <a href="{$cat.url}">{$cat.name|escape:html}</a></dt>
+      <dd>
+      <!--{foreach from=$cat.cat_id item=child}-->
+    <a href="{$child.url}">{$child.name|escape:html}</a>
+       <!--{foreach from=$child.cat_id item=childer}-->
+       </dd>
+       <!-- <dd>&nbsp;&nbsp;<a   href="{$childer.url}">{$childer.name|escape:html}</a></dd>-->
+       <!--{/foreach}-->
+     <!--{/foreach}-->
+   </dl>
+    <!--{/foreach}--> 
+  </div>
+ 
+<div class="blank"></div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+
+
+</div>
+
+<div style="float:right; width:792px">
+<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+<div style="float:right; width:230px">
+<!-- TemplateBeginEditable name="播放器右侧广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+
+{insert name='ads' id=$ads_id num=$ads_num}
+
+<div class="blank"></div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+ 
+<div class="gonggao_box  ">
+<div class="ff_1">
+    <h2 id="ECS_tree1" class=" tabFront" style="border-left:1px solid #d5d5d5;border-right:1px solid #d5d5d5; width:114px;  ">公告</h2>
+    <h2 id="ECS_tree2" class=" tabBack" style="border-right:1px solid #d5d5d5;">小脚丫</h2>
+</div>   
+<div style="clear:both"></div>
+<div  id="ECS_tree1_BODY">
+<!-- TemplateBeginEditable name="公告" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+<div class="box">
+ <div class="box_1 art">
+  <h3>
+  <span> {$articles_cat.name|escape:html} </span>
+  <a style="float:right; padding-top:3px" href="{$articles_cat.url}">更多>></a>
+  </h3>
+  <div class="boxCenterList RelaArticle ">
+  <!--{foreach from=$articles item=article_item name=no}-->
+ <!-- {if $smarty.foreach.no.iteration<3}-->
+ <a style="color:#f9044e" href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a> 
+  <!-- {else} -->	
+  <a href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a>  
+    <!-- {/if} -->
+  <!--{/foreach}-->
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+<div    id="ECS_tree2_BODY" style="display:none;">
+<!-- TemplateBeginEditable name="小脚丫" -->
+<!-- #BeginLibraryItem "/library/cat_articles.lbi" -->
+
+<div class="box">
+ <div class="box_1 art">
+  <h3>
+  <span> {$articles_cat.name|escape:html} </span>
+  <a style="float:right; padding-top:3px" href="{$articles_cat.url}">更多>></a>
+  </h3>
+  <div class="boxCenterList RelaArticle ">
+  <!--{foreach from=$articles item=article_item name=no}-->
+ <!-- {if $smarty.foreach.no.iteration<3}-->
+ <a style="color:#f9044e" href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a> 
+  <!-- {else} -->	
+  <a href="{$article_item.url}" title="{$article_item.title|escape:html}">{$article_item.short_title}</a>  
+    <!-- {/if} -->
+  <!--{/foreach}-->
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+</div>
+ <script type="text/javascript">
+//<![CDATA[
+{literal}
+  var cycleList = ['ECS_tree1','ECS_tree2'];
+  var tabFront = 'tabFront';
+  var tabBack = 'tabBack';
+  function cycleShow(obj)
+  {
+    var curObj;
+    var curBody;
+    for (i=0; i < cycleList.length; i++)
+    {
+      curObj = document.getElementById(cycleList[i]);
+      curBody = document.getElementById(cycleList[i] + '_BODY');
+      if (obj.id == curObj.id)
+      {
+        curObj.className = tabFront;
+        curBody.style.display = "";
+      }
+      else
+      {
+        curObj.className = tabBack;
+        curBody.style.display = "none";
+      }
+    }
+  }
+
+  // 添加事件
+  for (i=0; i< cycleList.length; i++)
+  {
+    document.getElementById(cycleList[i]).onmousemove = function()
+    {
+      cycleShow(this);
+    };
+  }
+{/literal}
+//]]>
+</script>
+
+</div>
+ 
+ <div style="clear:both"></div>
+ 
+ 
+ <!-- #BeginLibraryItem "/library/brands_box.lbi" --><!-- #EndLibraryItem -->
+<!-- TemplateBeginEditable name="首页右侧区域" -->
+<!-- TemplateEndEditable -->
+
+
+
+</div>
+<div class="blank"></div>
+
+      <div class="shangpin">
+   <!-- TemplateBeginEditable name="商品主区域" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('cat_advlist',get_cat_advlist('cat_adlist_'.$GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+
+
+<DIV class="cat_goods block">
+<div class="tit">
+ <a href="{$goods_cat.url}" ><img style="float:left" src="../images/cat/{$goods_cat.id}.gif">  </a>
+ 
+ <div class="s">
+  <!--{foreach name=childlist from=$goods_cat.children item=children name=child}-->
+ 
+ 
+ 
+  <a href="category.php?id={$children.cat_id}" target="_blank">
+  {$children.cat_name}
+  </a>
+   |
+  <!--{/foreach}-->
+  
+   <a href="{$goods_cat.url}" >更多>></a>
+  
+  </div>
+</div>
+<div style="clear:both"></div>
+<div class="cat_ads_box clearfix">
+   <div class="f_l clearfix">
+   <?php echo get_adv('cat_l1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+    <?php echo get_adv('cat_l2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+
+ 
+   <div class="cat_gundong" id="idContainer{$goods_cat.id}">
+	<ul id="idSlider{$goods_cat.id}">
+		<li>
+        <?php echo get_adv('cat_m1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+		<li>
+        <?php echo get_adv('cat_m2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+	</ul>
+	<ul class="num" id="idNum{$goods_cat.id}">
+	</ul>
+</div>
+   
+
+   <div class="f_r clearfix">
+       <?php echo get_adv('cat_r1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r3',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r4',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+  </div>
+
+<div class="blank5"></div>
+
+    <div class="clearfix goodsBox" style="border:none; padding:0; padding-left:0px;">
+   
+      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+      <div class="goodsItem"  <!--{if $smarty.foreach.cat_goods.index mod 5 eq 0}-->
+            style='padding-left:0;'
+            <!-- {/if} -->   >
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a> 
+           <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+           
+       
+        <font class="market"> 市场价 <del>{$goods.market_price}</del> </font> <br/>
+          
+           <!-- {if $goods.promote_price neq ""} -->
+          售价 <font class="shop_s">{$goods.promote_price}</font>
+          <!-- {else}-->
+          售价 <font class="shop_s">{$goods.shop_price}</font>
+          <!--{/if}--> 
+          
+          
+        </div>
+      <!--{/foreach}-->
+    </div>
+
+ </div>
+<div class="blank"></div>
+<script>
+
+var nums{$goods_cat.id} = [], timer, n = $$("idSlider{$goods_cat.id}").getElementsByTagName("li").length,
+	st{$goods_cat.id} = new SlideTrans("idContainer{$goods_cat.id}", "idSlider{$goods_cat.id}", n, {
+		onStart: function(){//设置按钮样式
+			forEach(nums{$goods_cat.id}, function(o, i){ o.className = st{$goods_cat.id}.Index == i ? "on" : ""; })
+		}
+	});
+for(var i = 1; i <= n; AddNum(i++)){};
+function AddNum(i){
+	var num{$goods_cat.id} = $$("idNum{$goods_cat.id}").appendChild(document.createElement("li"));
+	num{$goods_cat.id}.innerHTML = i--;
+	num{$goods_cat.id}.onmouseover = function(){
+		timer = setTimeout(function(){ num{$goods_cat.id}.className = "on"; st{$goods_cat.id}.Auto = false; st{$goods_cat.id}.Run(i); }, 200);
+	}
+	num{$goods_cat.id}.onmouseout = function(){ clearTimeout(timer); num{$goods_cat.id}.className = ""; st{$goods_cat.id}.Auto = true; st{$goods_cat.id}.Run(); }
+	nums{$goods_cat.id}[i] = num{$goods_cat.id};
+}
+st{$goods_cat.id}.Run();
+
+
+
+
+</script>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('cat_advlist',get_cat_advlist('cat_adlist_'.$GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+
+
+<DIV class="cat_goods block">
+<div class="tit">
+ <a href="{$goods_cat.url}" ><img style="float:left" src="../images/cat/{$goods_cat.id}.gif">  </a>
+ 
+ <div class="s">
+  <!--{foreach name=childlist from=$goods_cat.children item=children name=child}-->
+ 
+ 
+ 
+  <a href="category.php?id={$children.cat_id}" target="_blank">
+  {$children.cat_name}
+  </a>
+   |
+  <!--{/foreach}-->
+  
+   <a href="{$goods_cat.url}" >更多>></a>
+  
+  </div>
+</div>
+<div style="clear:both"></div>
+<div class="cat_ads_box clearfix">
+   <div class="f_l clearfix">
+   <?php echo get_adv('cat_l1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+    <?php echo get_adv('cat_l2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+
+ 
+   <div class="cat_gundong" id="idContainer{$goods_cat.id}">
+	<ul id="idSlider{$goods_cat.id}">
+		<li>
+        <?php echo get_adv('cat_m1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+		<li>
+        <?php echo get_adv('cat_m2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+	</ul>
+	<ul class="num" id="idNum{$goods_cat.id}">
+	</ul>
+</div>
+   
+
+   <div class="f_r clearfix">
+       <?php echo get_adv('cat_r1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r3',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r4',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+  </div>
+
+<div class="blank5"></div>
+
+    <div class="clearfix goodsBox" style="border:none; padding:0; padding-left:0px;">
+   
+      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+      <div class="goodsItem"  <!--{if $smarty.foreach.cat_goods.index mod 5 eq 0}-->
+            style='padding-left:0;'
+            <!-- {/if} -->   >
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a> 
+           <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+           
+       
+        <font class="market"> 市场价 <del>{$goods.market_price}</del> </font> <br/>
+          
+           <!-- {if $goods.promote_price neq ""} -->
+          售价 <font class="shop_s">{$goods.promote_price}</font>
+          <!-- {else}-->
+          售价 <font class="shop_s">{$goods.shop_price}</font>
+          <!--{/if}--> 
+          
+          
+        </div>
+      <!--{/foreach}-->
+    </div>
+
+ </div>
+<div class="blank"></div>
+<script>
+
+var nums{$goods_cat.id} = [], timer, n = $$("idSlider{$goods_cat.id}").getElementsByTagName("li").length,
+	st{$goods_cat.id} = new SlideTrans("idContainer{$goods_cat.id}", "idSlider{$goods_cat.id}", n, {
+		onStart: function(){//设置按钮样式
+			forEach(nums{$goods_cat.id}, function(o, i){ o.className = st{$goods_cat.id}.Index == i ? "on" : ""; })
+		}
+	});
+for(var i = 1; i <= n; AddNum(i++)){};
+function AddNum(i){
+	var num{$goods_cat.id} = $$("idNum{$goods_cat.id}").appendChild(document.createElement("li"));
+	num{$goods_cat.id}.innerHTML = i--;
+	num{$goods_cat.id}.onmouseover = function(){
+		timer = setTimeout(function(){ num{$goods_cat.id}.className = "on"; st{$goods_cat.id}.Auto = false; st{$goods_cat.id}.Run(i); }, 200);
+	}
+	num{$goods_cat.id}.onmouseout = function(){ clearTimeout(timer); num{$goods_cat.id}.className = ""; st{$goods_cat.id}.Auto = true; st{$goods_cat.id}.Run(); }
+	nums{$goods_cat.id}[i] = num{$goods_cat.id};
+}
+st{$goods_cat.id}.Run();
+
+
+
+
+</script>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<?php
+ $GLOBALS['smarty']->assign('cat_advlist',get_cat_advlist('cat_adlist_'.$GLOBALS['smarty']->_var['goods_cat']['id']));
+?>
+
+
+<DIV class="cat_goods block">
+<div class="tit">
+ <a href="{$goods_cat.url}" ><img style="float:left" src="../images/cat/{$goods_cat.id}.gif">  </a>
+ 
+ <div class="s">
+  <!--{foreach name=childlist from=$goods_cat.children item=children name=child}-->
+ 
+ 
+ 
+  <a href="category.php?id={$children.cat_id}" target="_blank">
+  {$children.cat_name}
+  </a>
+   |
+  <!--{/foreach}-->
+  
+   <a href="{$goods_cat.url}" >更多>></a>
+  
+  </div>
+</div>
+<div style="clear:both"></div>
+<div class="cat_ads_box clearfix">
+   <div class="f_l clearfix">
+   <?php echo get_adv('cat_l1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+    <?php echo get_adv('cat_l2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+
+ 
+   <div class="cat_gundong" id="idContainer{$goods_cat.id}">
+	<ul id="idSlider{$goods_cat.id}">
+		<li>
+        <?php echo get_adv('cat_m1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+		<li>
+        <?php echo get_adv('cat_m2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+        </li>
+	</ul>
+	<ul class="num" id="idNum{$goods_cat.id}">
+	</ul>
+</div>
+   
+
+   <div class="f_r clearfix">
+       <?php echo get_adv('cat_r1',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r2',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r3',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+       <?php echo get_adv('cat_r4',$GLOBALS['smarty']->_var['goods_cat']['id'])?>
+   </div>
+  </div>
+
+<div class="blank5"></div>
+
+    <div class="clearfix goodsBox" style="border:none; padding:0; padding-left:0px;">
+   
+      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+      <div class="goodsItem"  <!--{if $smarty.foreach.cat_goods.index mod 5 eq 0}-->
+            style='padding-left:0;'
+            <!-- {/if} -->   >
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a> 
+           <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+           
+       
+        <font class="market"> 市场价 <del>{$goods.market_price}</del> </font> <br/>
+          
+           <!-- {if $goods.promote_price neq ""} -->
+          售价 <font class="shop_s">{$goods.promote_price}</font>
+          <!-- {else}-->
+          售价 <font class="shop_s">{$goods.shop_price}</font>
+          <!--{/if}--> 
+          
+          
+        </div>
+      <!--{/foreach}-->
+    </div>
+
+ </div>
+<div class="blank"></div>
+<script>
+
+var nums{$goods_cat.id} = [], timer, n = $$("idSlider{$goods_cat.id}").getElementsByTagName("li").length,
+	st{$goods_cat.id} = new SlideTrans("idContainer{$goods_cat.id}", "idSlider{$goods_cat.id}", n, {
+		onStart: function(){//设置按钮样式
+			forEach(nums{$goods_cat.id}, function(o, i){ o.className = st{$goods_cat.id}.Index == i ? "on" : ""; })
+		}
+	});
+for(var i = 1; i <= n; AddNum(i++)){};
+function AddNum(i){
+	var num{$goods_cat.id} = $$("idNum{$goods_cat.id}").appendChild(document.createElement("li"));
+	num{$goods_cat.id}.innerHTML = i--;
+	num{$goods_cat.id}.onmouseover = function(){
+		timer = setTimeout(function(){ num{$goods_cat.id}.className = "on"; st{$goods_cat.id}.Auto = false; st{$goods_cat.id}.Run(i); }, 200);
+	}
+	num{$goods_cat.id}.onmouseout = function(){ clearTimeout(timer); num{$goods_cat.id}.className = ""; st{$goods_cat.id}.Auto = true; st{$goods_cat.id}.Run(); }
+	nums{$goods_cat.id}[i] = num{$goods_cat.id};
+}
+st{$goods_cat.id}.Run();
+
+
+
+
+</script>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/brands.lbi" -->
+
+<!-- {if $brand_list} -->
+<div class="brands">
+
+
+<!--{foreach from=$categories item=cat name=no}-->
+<!-- {if $smarty.foreach.no.iteration<5}-->
+<dl>
+<dt>
+<a href="{$cat.url}">{$cat.name|escape:html}</a>
+<img src="../images/tree{$smarty.foreach.no.iteration}.gif">
+</dt>
+<dd>
+<!--{foreach from=$cat.cat_id item=child name=no1}-->
+<span class="span{$smarty.foreach.no1.iteration}"><a href="{$child.url}">{$child.name|escape:html}</a><b>|</b>
+<font><br/></font>
+</span>
+<!--{/foreach}-->
+</dd>
+</dl>
+<!-- {/if} -->
+<!--{/foreach}--> 
+ 
+ 
+<dl>
+<dt>
+<a href="brand.php">热卖品牌</a>
+<img src="../images/brand_tit.gif">
+</dt>
+<dd>
+<!-- {foreach from=$brand_list item=brand name=no2} -->
+<span class="span{$smarty.foreach.no2.iteration}"><a href="{$brand.url}">{$brand.brand_name|escape:html}</a><b>|</b>
+<font><br/></font>
+</span>
+<!-- {/foreach} -->
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+ 
+ 
+</div>
+
+</div>
+
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+ 
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

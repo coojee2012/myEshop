@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <img src="../images/category_tit.gif" style="float:left">
+  <div id="category_tree">
+    <!--{foreach from=$categories item=cat name=no}-->
+     <dl>
+     <dt> <img src="../images/tree{$smarty.foreach.no.iteration}.gif"> <a href="{$cat.url}">{$cat.name|escape:html}</a></dt>
+      <dd>
+      <!--{foreach from=$cat.cat_id item=child}-->
+    <a href="{$child.url}">{$child.name|escape:html}</a>
+       <!--{foreach from=$child.cat_id item=childer}-->
+       </dd>
+       <!-- <dd>&nbsp;&nbsp;<a   href="{$childer.url}">{$childer.name|escape:html}</a></dd>-->
+       <!--{/foreach}-->
+     <!--{/foreach}-->
+   </dl>
+    <!--{/foreach}--> 
+  </div>
+ 
+<div class="blank"></div>

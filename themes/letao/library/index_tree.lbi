@@ -1,0 +1,71 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div style="float:left; width:740px">
+<img src="../images/tree_top.gif" style="padding-bottom:1px">
+<div class="blank"></div>
+<div id="category_tree_index">
+<?php
+$GLOBALS['smarty']->assign('HotClassTree',get_hot_cat_tree(0));
+?>
+
+{foreach from=$HotClassTree item=hotcatree name="hotcatree"}
+<dl <!-- {if $smarty.foreach.hotcatree.iteration<2}--> style=" border:none "   <!-- {/if} -->>
+
+<dt>
+
+<img src="../images/tree{$smarty.foreach.hotcatree.iteration}.gif"  />
+<a href="{$hotcatree.url}">{$hotcatree.name}</a>
+
+
+</dt>
+
+
+
+
+
+
+
+<dd> 
+   {foreach from=$hotcatree.chlid item=chlid name=hchlid}
+    <a href="{$chlid.url}">{$chlid.name}</a>
+	{if !$smarty.foreach.hchlid.last}
+<span>|</span>
+	{/if}
+   {/foreach}
+</dd>
+</dl>
+{/foreach}
+
+
+
+
+</div>
+</div>
+
+
+
+<DIV id=sort_ad>
+<DIV class=top3_ad_txt>
+<P>经典国货【回力】休闲鞋60元起</P></DIV>
+<DIV style="DISPLAY: block" class=top3_ad_img>
+<A href="#" target=_blank><IMG src="../images/gd1.jpg"></A> </DIV>
+<DIV class=top3_ad_txt>
+<P>经典潮牌converse庆五一 劲爆6折起</P></DIV>
+<DIV class=top3_ad_img>
+<A href="#" target=_blank><IMG src="../images/gd2.jpg"></A></DIV>
+</DIV>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="blank"></div>
