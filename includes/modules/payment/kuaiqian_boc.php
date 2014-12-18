@@ -75,15 +75,15 @@ class kuaiqian_boc
      *
      * @return void
      */
-
+  function __construct()
+    {
+        $this->kuaiqian_boc();
+    }
     function kuaiqian_boc()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_boc();
-    }
+  
 
    /**
      * 生成支付代码

@@ -75,15 +75,16 @@ class yeepay_ccb
      *
      * @return void
      */
+     function __construct()
+    {
+        $this->yeepay_ccb();
+    }
     function yeepay_ccb()
     {
         $this->frpid = 'CCB-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_ccb();
-    }
+   
 
     /**
      * 生成支付代码

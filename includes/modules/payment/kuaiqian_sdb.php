@@ -75,16 +75,16 @@ class kuaiqian_sdb
      *
      * @return void
      */
+  function __construct()
+    {
+        $this->kuaiqian_sdb();
+    }
 
     function kuaiqian_sdb()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_sdb();
-    }
-
+  
    /**
      * 生成支付代码
      * @param   array   $order  订单信息

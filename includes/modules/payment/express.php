@@ -72,14 +72,17 @@ class express
     *
     * @return void
     */
-    function express()
-    {
 
-    }
 
     function __construct()
     {
         $this->express();
+    }
+
+
+    function express()
+    {
+
     }
 
     /**

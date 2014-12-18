@@ -75,15 +75,18 @@ class yeepayszx
      *
      * @return void
      */
-    function yeepayszx()
-    {
-    }
 
-    function __construct()
+     function __construct()
     {
         $this->yeepayszx();
     }
 
+
+    function yeepayszx()
+    {
+    }
+
+   
     /**
      * 生成支付代码
      * @param   array   $order  订单信息

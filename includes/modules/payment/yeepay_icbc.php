@@ -75,15 +75,18 @@ class yeepay_icbc
      *
      * @return void
      */
+
+     function __construct()
+    {
+        $this->yeepay_icbc();
+    }
+    
     function yeepay_icbc()
     {
         $this->frpid = 'ICBC-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_icbc();
-    }
+   
 
     /**
      * 生成支付代码

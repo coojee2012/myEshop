@@ -78,14 +78,17 @@ class cncard
      *
      * @return void
      */
+
+     function __construct()
+    {
+        $this->cncard();
+    }
+    
     function cncard()
     {
     }
 
-    function __construct()
-    {
-        $this->cncard();
-    }
+   
 
     /**
      * 生成支付代码

@@ -74,14 +74,16 @@ class cappay
      *
      * @return void
      */
+     function __construct()
+    {
+        $this->cappay();
+    }
+    
     function cappay()
     {
     }
 
-    function __construct()
-    {
-        $this->cappay();
-    }
+   
 
     /**
      * 生成支付代码

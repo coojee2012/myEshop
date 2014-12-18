@@ -75,15 +75,16 @@ class yeepay_abchina
      *
      * @return void
      */
+     function __construct()
+    {
+        $this->yeepay_abchina();
+    }
     function yeepay_abchina()
     {
         $this->frpid = 'ABC-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_abchina();
-    }
+   
 
     /**
      * 生成支付代码

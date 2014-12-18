@@ -75,14 +75,15 @@ class yeepay
      *
      * @return void
      */
-    function yeepay()
-    {
-    }
-
     function __construct()
     {
         $this->yeepay();
     }
+    function yeepay()
+    {
+    }
+
+    
 
     /**
      * 生成支付代码

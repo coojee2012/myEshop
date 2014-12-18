@@ -76,14 +76,17 @@ class tenpayc2c
      *
      * @return void
      */
+
+     function __construct()
+    {
+        $this->tenpayc2c();
+    }
+    
     function tenpayc2c()
     {
     }
 
-    function __construct()
-    {
-        $this->tenpayc2c();
-    }
+   
 
     /**
      * 生成支付代码

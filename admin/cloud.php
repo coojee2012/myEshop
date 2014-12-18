@@ -57,7 +57,7 @@ if($act =='menu_api')
     {
         $t = new transport;
        $apiget = "ver= $data[version] &ecs_lang= $data[ecs_lang] &charset= $data[charset]&ent_id=$data[ent_id]& certificate_id=$data[certificate_id]";
-        $api_comment = $t->request('http://cloud.ecshop.com/menu_api.php', $apiget);
+        $api_comment = $t->request('http://cloud.baidu.com/menu_api.php', $apiget);
         $api_str = $api_comment["body"];
         if (!empty($api_str))
         {
@@ -97,7 +97,7 @@ elseif($act == 'cloud_remind')
     {
         $t = new transport('-1',5);
         $apiget = "ver=$data[version]&ecs_lang=$data[ecs_lang]&charset=$data[charset]&certificate_id=$data[certificate_id]&ent_id=$data[ent_id]";
-        $api_comment = $t->request('http://cloud.ecshop.com/cloud_remind.php', $apiget);
+        $api_comment = $t->request('http://cloud.baidu.com/cloud_remind.php', $apiget);
         $api_str=    $api_comment["body"];
         $json = new Services_JSON;
         $api_arr = @$json->decode($api_str,1);
@@ -107,7 +107,7 @@ elseif($act == 'cloud_remind')
             {
                 $api_arr['content'] = urldecode($api_arr['content']);
                 $message =explode('|',$api_arr['content']);
-                $api_arr['content']='<li  class="cloud_close">'.$message['0'].'<img onclick="cloud_close('.$message['1'].')" src="images/no.gif"></li>';
+                $api_arr['content']='';
                 if ($data['charset'] != 'UTF-8')
                 {
                     $api_arr['content'] = ecs_iconv('UTF-8',$data['charset'],$api_arr['content']);
@@ -137,7 +137,7 @@ elseif($act == 'close_remind')
     $remind_id=$_REQUEST['remind_id'];
     $t = new transport('-1',5);
     $apiget = "ver= $data[version] &ecs_lang= $data[ecs_lang] &charset= $data[charset] &certificate_id=$data[certificate_id]&ent_id=$data[ent_id]&remind_id=$remind_id";
-    $api_comment = $t->request('http://cloud.ecshop.com/cloud_remind.php', $apiget);
+    $api_comment = $t->request('http://cloud.baidu.com/cloud_remind.php', $apiget);
 
     $api_str = $api_comment["body"];
     $json = new Services_JSON;
@@ -155,7 +155,7 @@ elseif($act == 'close_remind')
             if (admin_priv('all','',false))
             {
                 $apiget.="&act=close_remind&ent_ac=$data[ent_ac]";
-                $result=$t->request('http://cloud.ecshop.com/cloud_remind.php', $apiget);
+                $result=$t->request('http://cloud.baidu.com/cloud_remind.php', $apiget);
                 $api_str = $result["body"];
                 //var_dump($api_str);
                 $api_arr = array();
@@ -168,7 +168,7 @@ elseif($act == 'close_remind')
                 if($api_arr['error'] == 1)
                 {
                     $message =explode('|',$api_arr['content']);
-                    $api_arr['content']='<li  class="cloud_close">'.$message['0'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$message['2'].'</li>';
+                    $api_arr['content']='';
                    make_json_result($api_arr['content']);
                 }
                 else
@@ -181,7 +181,7 @@ elseif($act == 'close_remind')
             {
                 $message =explode('|',$api_arr['content']);
 
-                $api_arr['content']='<li  class="cloud_close">'.$message['0'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$_LANG['cloud_no_priv'].'<img onclick="cloud_close( '.$message['1'].')" src="images/no.gif"></li>';
+                $api_arr['content']='';
 
                 make_json_result($api_arr['content']);
             }
@@ -225,7 +225,7 @@ else
     {
         $query .= '&'.$v.'='.$data[$v];
     }
-    ecs_header("Location: http://cloud.ecshop.com/api.php?act=".$act.$query."\n");
+    ecs_header("Location: http://cloud.baidu.com/api.php?act=".$act.$query."\n");
     exit();
 }
 

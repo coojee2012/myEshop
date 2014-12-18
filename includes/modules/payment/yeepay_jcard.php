@@ -75,15 +75,18 @@ class yeepay_jcard
      *
      * @return void
      */
+
+     function __construct()
+    {
+        $this->yeepay_jcard();
+    }
+    
     function yeepay_jcard()
     {
         $this->frpid = 'JUNNET-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_jcard();
-    }
+   
 
     /**
      * 生成支付代码

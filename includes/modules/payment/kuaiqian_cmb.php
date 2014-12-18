@@ -75,15 +75,15 @@ class kuaiqian_cmb
      *
      * @return void
      */
-
+ function __construct()
+    {
+        $this->kuaiqian_cmb();
+    }
     function kuaiqian_cmb()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_cmb();
-    }
+   
 
    /**
      * 生成支付代码

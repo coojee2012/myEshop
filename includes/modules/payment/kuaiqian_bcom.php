@@ -75,15 +75,15 @@ class kuaiqian_bcom
      *
      * @return void
      */
-
+ function __construct()
+    {
+        $this->kuaiqian_bcom();
+    }
     function kuaiqian_bcom()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_bcom();
-    }
+   
 
    /**
      * 生成支付代码

@@ -75,16 +75,18 @@ class yeepay_cmbchina
      *
      * @return void
      */
+
+     function __construct()
+    {
+        $this->yeepay_cmbchina();
+    }
+
     function yeepay_cmbchina()
     {
         $this->frpid = 'CMBCHINA-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_cmbchina();
-    }
-
+   
     /**
      * 生成支付代码
      * @param   array   $order  订单信息

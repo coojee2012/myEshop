@@ -75,15 +75,15 @@ class kuaiqian_icbc
      *
      * @return void
      */
-
+ function __construct()
+    {
+        $this->kuaiqian_icbc();
+    }
     function kuaiqian_icbc()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_icbc();
-    }
+   
 
    /**
      * 生成支付代码
