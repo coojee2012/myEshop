@@ -48,7 +48,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['pay_fee'] = '1%';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = '系统';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.chinabank.com.cn';

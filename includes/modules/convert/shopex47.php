@@ -32,7 +32,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['desc'] = 'shopex47_desc';
 
     /* 作者 */
-    $modules[$i]['author'] = 'ECSHOP R&D TEAM';
+    $modules[$i]['author'] = '系统';
 
     return;
 }

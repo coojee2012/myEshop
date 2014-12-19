@@ -27,16 +27,16 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['code']    = 'ecshop';
 
     /* 被整合的第三方程序的名称 */
-    $modules[$i]['name']    = 'ECSHOP';
+    $modules[$i]['name']    = 'SYSTEM';
 
     /* 被整合的第三方程序的版本 */
     $modules[$i]['version'] = '2.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
+    $modules[$i]['author']  = '系统';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.ecshop.com';
+    $modules[$i]['website'] = 'http://www.baidu.com';
 
     return;
 }
