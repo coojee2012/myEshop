@@ -47,7 +47,7 @@ if (isset($set_modules) && $set_modules == true)
     $modules[$i]['is_online'] = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = '系统';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.99bill.com';
@@ -75,15 +75,15 @@ class kuaiqian_icbc
      *
      * @return void
      */
-
+ function __construct()
+    {
+        $this->kuaiqian_icbc();
+    }
     function kuaiqian_icbc()
     {
     }
 
-    function __construct()
-    {
-        $this->kuaiqian_icbc();
-    }
+   
 
    /**
      * 生成支付代码

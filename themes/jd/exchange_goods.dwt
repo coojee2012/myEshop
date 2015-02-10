@@ -14,7 +14,7 @@
 {* 包含脚本文件 *}
 {insert_scripts files='common.js'}
 <script type="text/javascript" src="js/action.js"></script>
-<script type="text/javascript" src="themes/68ecshopcom_jingdongfree/js/mzp-packed-me.js"></script>
+<script type="text/javascript" src="themes/jd/js/mzp-packed-me.js"></script>
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->

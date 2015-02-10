@@ -5,7 +5,7 @@
  
 </ul>
 <script type="Text/Javascript" language="JavaScript">
-<!--
+/**
   Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
     function cloud_api(result)
     {
@@ -23,7 +23,7 @@
     {
       Ajax.call('cloud.php?is_ajax=1&act=close_remind&remind_id='+id,'', cloud_api, 'GET', 'JSON');
     }
-  //-->
+ **/
  </script> 
 <ul id="lilist" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
   <?php $_from = $this->_var['warning_arr']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'warning');if (count($_from)):
@@ -33,7 +33,6 @@
   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 </ul>
 <ul style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
- <!-- <script type="text/javascript" src="http://bbs.ecshop.com/notice.php?v=1&n=8&f=ul"></script>-->
 </ul>
 <!-- directory install end -->
 <!-- start personal message -->
@@ -214,7 +213,7 @@
   </tr>
   <tr>
     <td><?php echo $this->_var['lang']['ecs_version']; ?></td>
-    <td><?php echo $this->_var['ecs_version']; ?> RELEASE <?php echo $this->_var['ecs_release']; ?></td>
+    <td><?php echo $this->_var['ecs_version']; ?></td>
     <td><?php echo $this->_var['lang']['install_date']; ?></td>
     <td><?php echo $this->_var['install_date']; ?></td>
   </tr>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ECSHOP Menu</title>
+<title>诚和办公</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="styles/general.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
@@ -144,7 +144,6 @@ body {
   </li>
 <?php endif; ?>
 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-  <script language="JavaScript" src="http://api.ecshop.com/menu_ext.php?charset=<?php echo $this->_var['charset']; ?>&lang=<?php echo $this->_var['help_lang']; ?>"></script>
 </ul>
 </div>
 <div id="help-div" style="display:none">
@@ -409,7 +408,7 @@ Object.extend(ToggleHanlder ,{
 ToggleHanlder.CookieName += "_<?php echo $this->_var['admin_id']; ?>";
 //初始化菜单状态
 ToggleHanlder.Load();
-Ajax.call('cloud.php?is_ajax=1&act=menu_api','', start_menu_api, 'GET', 'JSON');
+//Ajax.call('cloud.php?is_ajax=1&act=menu_api','', start_menu_api, 'GET', 'JSON');
 function start_menu_api(result)
 {
       if(result.content==0)

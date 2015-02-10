@@ -258,7 +258,7 @@ function bidResponse(result)
     alert(result.content);
   }
 }
-onload = function()
+/*onload = function()
 {
     var link_arr = document.getElementsByTagName(String.fromCharCode(65));
     var link_str;
@@ -350,7 +350,7 @@ onload = function()
   catch(ex)
   {
   }
-}
+}*/
 
 /* *
  * 夺宝奇兵最新出价

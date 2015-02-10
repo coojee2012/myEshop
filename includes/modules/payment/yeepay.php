@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = '系统';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.yeepay.com';
@@ -75,14 +75,15 @@ class yeepay
      *
      * @return void
      */
-    function yeepay()
-    {
-    }
-
     function __construct()
     {
         $this->yeepay();
     }
+    function yeepay()
+    {
+    }
+
+    
 
     /**
      * 生成支付代码

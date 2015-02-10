@@ -107,7 +107,7 @@
 <script type="text/javascript">
 onload = function()
 {
-  Ajax.call('index.php?is_ajax=1&act=license','', start_sendmail_Response, 'GET', 'JSON');
+ // Ajax.call('index.php?is_ajax=1&act=license','', start_sendmail_Response, 'GET', 'JSON');
 }
 /**
  * 帮助系统调用
@@ -191,8 +191,8 @@ var adminId = "{$admin_id}";
   <div id="license-div" style="bgcolor:#000000;"></div>
   <div id="submenu-div">
     <ul>
-      <li><a href="index.php?act=about_us" target="main-frame">{$lang.about}</a></li>
-      <li><a href="javascript:web_address();">{$lang.help}</a></li>
+      <!-- <li><a href="index.php?act=about_us" target="main-frame">{$lang.about}</a></li>
+      <li><a href="javascript:web_address();">{$lang.help}</a></li> -->
       <li><a href="../" target="_blank">{$lang.preview}</a></li>
       <li><a href="message.php?act=list" target="main-frame">{$lang.view_message}</a></li>
       <li><a href="privilege.php?act=modif" target="main-frame">{$lang.profile}</a></li>
@@ -220,7 +220,7 @@ var adminId = "{$admin_id}";
     {literal}
     function start_sendmail()
     {
-      Ajax.call('index.php?is_ajax=1&act=send_mail','', start_sendmail_Response, 'GET', 'JSON');
+      //Ajax.call('index.php?is_ajax=1&act=send_mail','', start_sendmail_Response, 'GET', 'JSON');
     }
     function start_sendmail_Response(result)
     {

@@ -107,7 +107,7 @@
 <script type="text/javascript">
 onload = function()
 {
-  Ajax.call('index.php?is_ajax=1&act=license','', start_sendmail_Response, 'GET', 'JSON');
+ // Ajax.call('index.php?is_ajax=1&act=license','', start_sendmail_Response, 'GET', 'JSON');
 }
 /**
  * 帮助系统调用
@@ -191,8 +191,8 @@ var adminId = "<?php echo $this->_var['admin_id']; ?>";
   <div id="license-div" style="bgcolor:#000000;"></div>
   <div id="submenu-div">
     <ul>
-      <li><a href="index.php?act=about_us" target="main-frame"><?php echo $this->_var['lang']['about']; ?></a></li>
-      <li><a href="javascript:web_address();"><?php echo $this->_var['lang']['help']; ?></a></li>
+      <!-- <li><a href="index.php?act=about_us" target="main-frame"><?php echo $this->_var['lang']['about']; ?></a></li>
+      <li><a href="javascript:web_address();"><?php echo $this->_var['lang']['help']; ?></a></li> -->
       <li><a href="../" target="_blank"><?php echo $this->_var['lang']['preview']; ?></a></li>
       <li><a href="message.php?act=list" target="main-frame"><?php echo $this->_var['lang']['view_message']; ?></a></li>
       <li><a href="privilege.php?act=modif" target="main-frame"><?php echo $this->_var['lang']['profile']; ?></a></li>
@@ -220,7 +220,7 @@ var adminId = "<?php echo $this->_var['admin_id']; ?>";
     
     function start_sendmail()
     {
-      Ajax.call('index.php?is_ajax=1&act=send_mail','', start_sendmail_Response, 'GET', 'JSON');
+      //Ajax.call('index.php?is_ajax=1&act=send_mail','', start_sendmail_Response, 'GET', 'JSON');
     }
     function start_sendmail_Response(result)
     {

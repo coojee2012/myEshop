@@ -1,4 +1,4 @@
-
+<div class="ads">
 <?php 
 $k = array (
   'name' => 'ads',
@@ -7,5 +7,4 @@ $k = array (
 );
 echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 ?>
-
-<div class="blank"></div>
+</div>

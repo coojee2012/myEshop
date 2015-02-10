@@ -280,9 +280,9 @@ con.style.display=i==cursel?"block":"none";
 
        
         <p>
-        <a href="http://www.68ecshop.com/" target="_blank" title="{$link.name}" class="linkTxt">ecshop</a>
-            <a href="http://www.68ecshop.com/" target="_blank" title="{$link.name}" class="linkTxt">ecshop模板</a>
-            <a href="http://chajian.68ecshop.com/" target="_blank" title="{$link.name}" class="linkTxt"></a>
+        <a href="http://www.baidu.com/" target="_blank" title="{$link.name}" class="linkTxt">友情链接</a>
+            <a href="http://www.baidu.com/" target="_blank" title="{$link.name}" class="linkTxt">友情链接</a>
+            <a href="http://www.baidu.com/" target="_blank" title="{$link.name}" class="linkTxt">友情链接</a>
 			<!-- {if $txt_links} -->
 			<!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
 			<a href="{$link.url}" target="_blank" title="{$link.name}" class="linkTxt">{$link.name}</a>

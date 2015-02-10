@@ -1,18 +1,20 @@
-<div class="box" id='history_div'>
- <div class="box_1 box_3">
-  <h3><span><?php echo $this->_var['lang']['view_history']; ?></span></h3>
-  <div class="boxCenterList clearfix" id='history_list'>
-    <?php 
+<h1 class="mod2tit" style="background:url(themes/jd/images/category_tree_bg.gif); height:27px;"><?php echo $this->_var['lang']['view_history']; ?></h1>
+<div id='history_div'>
+<div class="mod1 mod2 blank" id="historybox">
+	<span class="lb"></span><span class="rb"></span>
+
+	<div id='history_list' class="history_list mod2con">
+	 <?php 
 $k = array (
   'name' => 'history',
 );
 echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 ?>
   </div>
- </div>
 </div>
-<div class="blank"></div>
+</div>
 <script type="text/javascript">
+divheight("historybox");
 if (document.getElementById('history_list').innerHTML.replace(/\s/g,'').length<1)
 {
     document.getElementById('history_div').style.display='none';

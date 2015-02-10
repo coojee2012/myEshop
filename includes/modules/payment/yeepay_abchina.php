@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = '系统';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.yeepay.com';
@@ -75,15 +75,16 @@ class yeepay_abchina
      *
      * @return void
      */
+     function __construct()
+    {
+        $this->yeepay_abchina();
+    }
     function yeepay_abchina()
     {
         $this->frpid = 'ABC-NET';
     }
 
-    function __construct()
-    {
-        $this->yeepay_abchina();
-    }
+   
 
     /**
      * 生成支付代码

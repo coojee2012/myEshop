@@ -5,7 +5,7 @@
  
 </ul>
 <script type="Text/Javascript" language="JavaScript">
-<!--
+/**
   Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
     function cloud_api(result)
     {
@@ -23,7 +23,7 @@
     {
       Ajax.call('cloud.php?is_ajax=1&act=close_remind&remind_id='+id,'', cloud_api, 'GET', 'JSON');
     }
-  //-->
+ **/
  </script> 
 <ul id="lilist" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
   {foreach from=$warning_arr item=warning}
@@ -31,7 +31,6 @@
   {/foreach}
 </ul>
 <ul style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
- <!-- <script type="text/javascript" src="http://bbs.ecshop.com/notice.php?v=1&n=8&f=ul"></script>-->
 </ul>
 <!-- directory install end -->
 <!-- start personal message -->
@@ -210,7 +209,7 @@
   </tr>
   <tr>
     <td>{$lang.ecs_version}</td>
-    <td>{$ecs_version} RELEASE {$ecs_release}</td>
+    <td>{$ecs_version}</td>
     <td>{$lang.install_date}</td>
     <td>{$install_date}</td>
   </tr>

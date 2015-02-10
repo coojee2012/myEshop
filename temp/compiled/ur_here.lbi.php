@@ -1,11 +1,4 @@
-<div class="block box">
- <div id="ur_here">
- <img src="themes/letao/images/ur_bg2.gif">
+<div class="ur_here blank">
 
-<?php echo $this->_var['ur_here']; ?> 
+<?php echo $this->_var['lang']['ur_here']; ?> <?php echo $this->_var['ur_here']; ?>
 </div>
-</div>
-
-
-<div class="blank"></div>
- 
