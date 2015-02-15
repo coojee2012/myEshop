@@ -3,14 +3,14 @@
 /**
  * ECSHOP 前台语言文件
  * ============================================================================
- * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
+ * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
  * 网站地址: http://www.ecshop.com；
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
- * $Author: liuhui $
- * $Id: common.php 17063 2010-03-25 06:35:46Z liuhui $
+ * $Author: liubo $
+ * $Id: common.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
 /* 用户登录语言项 */
@@ -50,7 +50,7 @@ $_LANG['query_info'] = "共执行 %d 个查询，用时 %f 秒，在线 %d 人";
 $_LANG['gzip_enabled'] = '，Gzip 已启用';
 $_LANG['gzip_disabled'] = '，Gzip 已禁用';
 $_LANG['memory_info'] = '，占用内存 %0.3f MB';
-$_LANG['cart_info'] = '购物车<b>%d</b>件';
+$_LANG['cart_info'] = '您的购物车中有 %d 件商品，总计金额 %s。';
 $_LANG['shopping_and_other'] = '购买过此商品的人还购买过';
 $_LANG['bought_notes'] = '购买记录';
 $_LANG['later_bought_amounts'] = '近期成交数量';
@@ -552,7 +552,7 @@ $_LANG['email_checked'] = '邮件已经被确认！';
 $_LANG['hash_wrong'] = '验证串错误！请核对验证串或输入email地址重新发送验证串！';
 $_LANG['email_canceled'] = '邮件已经被退定！';
 $_LANG['goods_click_count'] = '商品点击数';
-$_LANG['p_y']['link_start'] = '<a href="http://www.baidu.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_start'] = '<a href="http://www.ecshop.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
 $_LANG['p_y']['link_p'] = 'Powe';
 $_LANG['p_y']['link_r'] = 'red&nbsp;';
 $_LANG['p_y']['link_b'] = 'by&nbsp;';
@@ -644,6 +644,7 @@ $_LANG['print_quotation'] = "打印报价单";
 $_LANG['goods_inventory'] = "库存";
 $_LANG['goods_category'] = "商品分类";
 $_LANG['shopman_reply'] = '管理员回复';
+$_LANG['specifications'] = '规格';
 
 /* 相册JS语言项 */
 $_LANG['gallery_js']['close_window'] = '您是否关闭当前窗口';

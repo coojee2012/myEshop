@@ -25,6 +25,8 @@ $_LANG['gram'] = '克';
 $_LANG['home'] = '首页';
 $_LANG['goods_attr'] = '';
 $smarty->assign('goods_id', $goods_id);
+$goods_info = get_goods_info($goods_id);
+if ($goods_info === false)
 {
    /* 如果没有找到任何记录则跳回到首页 */
    ecs_header("Location: ./\n");

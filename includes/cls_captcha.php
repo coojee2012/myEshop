@@ -122,9 +122,12 @@ class captcha
         }
     }
 
+<<<<<<< HEAD
     
 
 
+=======
+>>>>>>> dc9229a6ba3d8cf9a28de6b01e9621abbe1599b3
     /**
      * 检查给出的验证码是否和session中的一致
      *

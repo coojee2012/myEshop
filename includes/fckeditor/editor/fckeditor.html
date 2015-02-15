@@ -24,9 +24,10 @@
 <html>
 <head>
 	<title>FCKeditor</title>
-	<meta name="robots" content="noindex, nofollow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Cache-Control" content="public">
+	<meta name="robots" content="noindex, nofollow" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="public" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
 	<script type="text/javascript">
 
 // #1645: Alert the user if opening FCKeditor in FF3 from local filesystem
@@ -124,7 +125,7 @@ LoadScript( '../fckconfig.js' ) ;
 // Adobe AIR compatibility file.
 if ( FCKBrowserInfo.IsAIR )
 	LoadScript( 'js/fckadobeair.js' ) ;
-
+    
 if ( FCKBrowserInfo.IsIE )
 {
 	// Remove IE mouse flickering.
@@ -267,7 +268,7 @@ function WaitForActive( editorInstance, newStatus )
 
 // Gecko browsers doesn't calculate well the IFRAME size so we must
 // recalculate it every time the window size changes.
-if ( FCKBrowserInfo.IsGecko && !FCKBrowserInfo.IsOpera )
+if (FCKBrowserInfo.IsGecko && !FCKBrowserInfo.IsOpera )
 {
 	window.onresize = function( e )
 	{

@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '6.32/7.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -53,10 +53,6 @@ class phpwind6 extends integrate
     var $db_hash = '';
     var $db_sitehash = '';
 
-    function __construct($cfg)
-    {
-        $this->phpwind6($cfg);
-    }
 
     /**
      *  插件类初始化函数

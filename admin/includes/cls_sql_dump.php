@@ -28,7 +28,8 @@ if (!defined('IN_ECS'))
  */
 function dump_escape_string($str)
 {
-    return cls_mysql::escape_string($str);
+    global $db;
+    return $db->escape_string($str);
 }
 
 /**
@@ -69,28 +70,15 @@ class cls_sql_dump
      *
      * @return void
      */
-    function cls_sql_dump(&$db, $max_size=0)
+   function cls_sql_dump(&$db, $max_size=0)
     {
         $this->db = &$db;
         if ($max_size > 0 )
         {
             $this->max_size = $max_size;
         }
-
     }
 
-    /**
-     *  类的构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-    function __construct(&$db, $max_size =0)
-    {
-        $this->cls_sql_dump($db, $max_size);
-    }
 
     /**
      *  获取指定表的定义
@@ -475,7 +463,7 @@ class cls_sql_dump
      *
      * @return      string      $str    随机名称
      */
-    function get_random_name()
+   static public function get_random_name()
     {
         $str = date('Ymd');
 

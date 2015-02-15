@@ -43,8 +43,8 @@ else
     $domain = $ecs->url();
     $today  = local_date('Y-m-d');
 
-    $sm     =& new google_sitemap();
-    $smi    =& new google_sitemap_item($domain, $today, $_POST['homepage_changefreq'], $_POST['homepage_priority']);
+    $sm     =new google_sitemap();
+    $smi    =new google_sitemap_item($domain, $today, $_POST['homepage_changefreq'], $_POST['homepage_priority']);
     $sm->add_item($smi);
 
     $config = array(
@@ -65,7 +65,7 @@ else
 
     while ($row = $db->fetchRow($res))
     {
-        $smi =& new google_sitemap_item($domain . build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']), $today,
+        $smi =new google_sitemap_item($domain . build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']), $today,
             $_POST['category_changefreq'], $_POST['category_priority']);
         $sm->add_item($smi);
     }
@@ -76,7 +76,7 @@ else
 
     while ($row = $db->fetchRow($res))
     {
-        $smi =& new google_sitemap_item($domain . build_uri('article_cat', array('acid' => $row['cat_id']), $row['cat_name']), $today,
+        $smi =new google_sitemap_item($domain . build_uri('article_cat', array('acid' => $row['cat_id']), $row['cat_name']), $today,
             $_POST['category_changefreq'], $_POST['category_priority']);
         $sm->add_item($smi);
     }
@@ -87,7 +87,7 @@ else
 
     while ($row = $db->fetchRow($res))
     {
-        $smi =& new google_sitemap_item($domain . build_uri('goods', array('gid' => $row['goods_id']), $row['goods_name']), $today,
+        $smi =new google_sitemap_item($domain . build_uri('goods', array('gid' => $row['goods_id']), $row['goods_name']), $today,
             $_POST['content_changefreq'], $_POST['content_priority']);
         $sm->add_item($smi);
     }
@@ -99,7 +99,7 @@ else
     while ($row = $db->fetchRow($res))
     {
         $article_url=$row['open_type'] != 1 ? build_uri('article', array('aid'=>$row['article_id']), $row['title']) : trim($row['file_url']);
-        $smi =& new google_sitemap_item($domain . $article_url,
+        $smi =new google_sitemap_item($domain . $article_url,
             $today, $_POST['content_changefreq'], $_POST['content_priority']);
         $sm->add_item($smi);
     }

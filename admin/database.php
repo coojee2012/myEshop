@@ -136,6 +136,11 @@ if ($_REQUEST['act'] == 'restore')
 if ($_REQUEST['act'] == 'dumpsql')
 {
     /* 权限判断 */
+    $token=trim($_REQUEST['token']);
+    if($token!=$_CFG['token'])
+    {
+        sys_msg($_LANG['backup_failure'], 1);
+    }
     admin_priv('db_backup');
 
     /* 检查目录权限 */
@@ -304,7 +309,7 @@ if ($_REQUEST['act'] == 'dumpsql')
             sys_msg(sprintf($_LANG['fail_write_file'], $sql_file_name . '_' . $vol . '.sql'), 1, array(array('text'=>$_LANG['02_db_manage'], 'href'=>'database.php?act=backup')), false);
         }
 
-        $lnk = 'database.php?act=dumpsql&sql_file_name=' . $sql_file_name . '&vol_size=' . $max_size . '&vol=' . ($vol+1);
+        $lnk = 'database.php?act=dumpsql&token='.$_CFG['token'].'&sql_file_name=' . $sql_file_name . '&vol_size=' . $max_size . '&vol=' . ($vol+1);
         $smarty->assign('title',         sprintf($_LANG['backup_title'], '#' . $vol));
         $smarty->assign('auto_redirect', 1);
         $smarty->assign('auto_link',     $lnk);

@@ -342,7 +342,6 @@ function send_mail($name, $email, $subject, $content, $type = 0, $notification=f
 function gd_version()
 {
     include_once(ROOT_PATH . 'includes/cls_image.php');
-
     return cls_image::gd_version();
 }
 
@@ -766,6 +765,7 @@ function make_semiangle($str)
 
     return strtr($str, $arr);
 }
+
 /**
  * 过滤用户输入的基本数据，防止script攻击
  *
@@ -774,10 +774,11 @@ function make_semiangle($str)
  */
 function compile_str($str)
 {
-    $arr = array('<' => '＜', '>' => '＞');
+    $arr = array('<' => '＜', '>' => '＞','"'=>'”',"'"=>'’');
 
     return strtr($str, $arr);
 }
+
 /**
  * 检查文件类型
  *

@@ -27,8 +27,8 @@ if (!defined('IN_ECS'))
 function get_gd_version()
 {
     include_once(ROOT_PATH . 'includes/cls_image.php');
-
-    return cls_image::gd_version();
+    $image = new cls_image();
+    return $image->gd_version();
 }
 
 /**
@@ -314,16 +314,16 @@ function create_config_file($db_host, $db_port, $db_user, $db_pass, $db_name, $p
     global $err, $_LANG;
     $db_host = construct_db_host($db_host, $db_port);
 
-    $content = '<?' ."php\n";
-    $content .= "// database host\n";
+    $content = '<?' ."php \n";
+    $content .= "// database host \n";
     $content .= "\$db_host   = \"$db_host\";\n\n";
-    $content .= "// database name\n";
+    $content .= "// database name \n";
     $content .= "\$db_name   = \"$db_name\";\n\n";
-    $content .= "// database username\n";
+    $content .= "// database username \n";
     $content .= "\$db_user   = \"$db_user\";\n\n";
     $content .= "// database password\n";
     $content .= "\$db_pass   = \"$db_pass\";\n\n";
-    $content .= "// table prefix\n";
+    $content .= "// table prefix \n";
     $content .= "\$prefix    = \"$prefix\";\n\n";
     $content .= "\$timezone    = \"$timezone\";\n\n";
     $content .= "\$cookie_path    = \"/\";\n\n";
@@ -335,7 +335,6 @@ function create_config_file($db_host, $db_port, $db_user, $db_pass, $db_name, $p
     $content .= "define('OLD_AUTH_KEY', '');\n\n";
     $content .= "define('API_TIME', '');\n\n";
     $content .= '?>';
-
 
     $fp = @fopen(ROOT_PATH . 'data/config.php', 'wb+');
     if (!$fp)
@@ -349,7 +348,7 @@ function create_config_file($db_host, $db_port, $db_user, $db_pass, $db_name, $p
         return false;
     }
     @fclose($fp);
-
+    
     return true;
 }
 
@@ -430,8 +429,8 @@ function create_admin_passport($admin_name, $admin_password, $admin_password2, $
 
     if (!(strlen($admin_password) >= 8 && preg_match("/\d+/",$admin_password) && preg_match("/[a-zA-Z]+/",$admin_password)))
     {
-        $err->add($_LANG['js_languages']['password_invaild']);
-        return false;
+        //$err->add($_LANG['js_languages']['password_invaild']);
+        //return false;
     }
 
     if ($admin_password !== $admin_password2)
@@ -569,6 +568,7 @@ function copy_files($source, $target)
 function do_others($system_lang, $captcha, $goods_types, $install_demo, $integrate_code)
 {
     global $err, $_LANG;
+    
 
     /* 安装预选商品类型 */
     if (!install_goods_types($goods_types, $system_lang))
@@ -580,6 +580,7 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
     /* 安装测试数据 */
     if (intval($install_demo))
     {
+        
         if (file_exists(ROOT_PATH . 'demo/'. $system_lang . '.sql'))
         {
             $sql_files = array(ROOT_PATH . 'demo/'. $system_lang . '.sql');
@@ -588,6 +589,7 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
         {
             $sql_files = array(ROOT_PATH . 'demo/zh_cn.sql');
         }
+        
         if (!install_data($sql_files))
         {
             $err->add(implode('', $err->last_message()));
@@ -629,7 +631,7 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
             return false;
         }
     }
-
+    
     include(ROOT_PATH . 'data/config.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
@@ -687,9 +689,8 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
  */
 function deal_aftermath()
 {
-    global $err, $_LANG;
+    global $err, $_LANG,$db_host, $db_user, $db_pass, $db_name,$prefix;
 
-    include(ROOT_PATH . 'data/config.php');
     include_once(ROOT_PATH . 'includes/cls_ecshop.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
 
@@ -738,7 +739,7 @@ function deal_aftermath()
 
     /* 写入 hash_code，做为网站唯一性密钥 */
     $hash_code = md5(md5(time()) . md5($db->dbhash) . md5(time()));
-    $sql = "UPDATE $prefix"."shop_config SET value = '$hash_code' WHERE code = 'hash_code' AND value = ''";
+    $sql = "UPDATE $prefix"."shop_config SET value = '$hash_code' WHERE code = 'hash_code' ";
     if (!$db->query($sql, 'SILENT'))
     {
         $err->add($db->errno() .' '. $db->error());
@@ -770,7 +771,8 @@ function deal_aftermath()
  */
 function get_spt_code()
 {
-    include(ROOT_PATH . 'data/config.php');
+    global $db_host, $db_user, $db_pass, $db_name,$prefix;
+    
     include_once(ROOT_PATH . 'includes/cls_ecshop.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);

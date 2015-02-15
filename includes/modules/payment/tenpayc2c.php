@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.tenpay.com';
@@ -68,25 +68,6 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class tenpayc2c
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-
-     function __construct()
-    {
-        $this->tenpayc2c();
-    }
-    
-    function tenpayc2c()
-    {
-    }
-
-   
 
     /**
      * 生成支付代码

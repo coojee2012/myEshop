@@ -18,9 +18,9 @@ if (!defined('IN_ECS'))
     die('Hacking attempt');
 }
 
-define('APPNAME', '诚和办公');
+define('APPNAME', 'ECSHOP');
 define('VERSION', 'v2.7.3');
-define('RELEASE', '20130218');
+define('RELEASE', '20121106');
 
 class ECS
 {

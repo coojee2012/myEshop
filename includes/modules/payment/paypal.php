@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.paypal.com';
@@ -67,24 +67,6 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class paypal
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-     function __construct()
-    {
-        $this->paypal();
-    }
-    
-    function paypal()
-    {
-    }
-
-   
 
     /**
      * 生成支付代码

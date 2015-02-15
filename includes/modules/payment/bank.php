@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '0';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -64,25 +64,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class bank
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-     function __construct()
-    {
-        $this->bank();
-    }
 
-
-    function bank()
-    {
-    }
-
-   
     /**
      * 提交函数
      */

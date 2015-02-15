@@ -621,7 +621,7 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
         }
     }
 
-    include(ROOT_PATH . 'data/config.php');
+    include_once(ROOT_PATH . 'data/config.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
 
@@ -722,7 +722,7 @@ function deal_aftermath()
 
     /* 写入 hash_code，做为网站唯一性密钥 */
     $hash_code = md5(md5(time()) . md5($db->dbhash) . md5(time()));
-    $sql = "UPDATE $prefix"."shop_config SET value = '$hash_code' WHERE code = 'hash_code' AND value = ''";
+    $sql = "UPDATE $prefix"."shop_config SET value = '$hash_code' WHERE code = 'hash_code' ";
     if (!$db->query($sql, 'SILENT'))
     {
         $err->add($db->errno() .' '. $db->error());

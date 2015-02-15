@@ -37,7 +37,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['desc']    = 'auto_manage_desc';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.ecshop.com';

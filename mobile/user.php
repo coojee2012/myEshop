@@ -214,7 +214,7 @@ elseif ($act == 'act_register')
                 if(!empty($_POST[$extend_field_index]))
                 {
                     $temp_field_content = strlen($_POST[$extend_field_index]) > 100 ? mb_substr($_POST[$extend_field_index], 0, 99) : $_POST[$extend_field_index];
-                    $extend_field_str .= " ('" . $_SESSION['user_id'] . "', '" . $val['id'] . "', '" . $temp_field_content . "'),";
+                    $extend_field_str .= " ('" . $_SESSION['user_id'] . "', '" . $val['id'] . "', '" . compile_str($temp_field_content) . "'),";
                 }
             }
             $extend_field_str = substr($extend_field_str, 0, -1);
@@ -284,11 +284,25 @@ function m_register($username, $password, $email, $other = array())
         ecs_header("Location: $Loaction\n");
         return false;
     }
+    if (preg_match('/\'\/^\\s*$|^c:\\\\con\\\\con$|[%,\\*\\"\\s\\t\\<\\>\\&\'\\\\]/', $username))
+    {
+        echo '用户名错误';
+        $Loaction = 'user.php?act=register';
+        ecs_header("Location: $Loaction\n");
+        return false;
+    }
 
     /* 检查email */
     if (empty($email))
     {
-        echo 'emial不能为空';
+        echo 'email不能为空';
+        $Loaction = 'user.php?act=register';
+        ecs_header("Location: $Loaction\n");
+        return false;
+    }
+    if(!is_email($email))
+    {
+        echo 'email错误';
         $Loaction = 'user.php?act=register';
         ecs_header("Location: $Loaction\n");
         return false;

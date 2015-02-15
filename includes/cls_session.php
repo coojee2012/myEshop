@@ -38,10 +38,6 @@ class cls_session
     var $_ip   = '';
     var $_time = 0;
 
-    function __construct(&$db, $session_table, $session_data_table, $session_name = 'ECS_ID', $session_id = '')
-    {
-        $this->cls_session($db, $session_table, $session_data_table, $session_name, $session_id);
-    }
 
     function cls_session(&$db, $session_table, $session_data_table, $session_name = 'ECS_ID', $session_id = '')
     {
@@ -175,7 +171,9 @@ class cls_session
                 {
                     $this->session_expiry = $session_data['expiry'];
                     $this->session_md5    = md5($session_data['data']);
-                    $GLOBALS['_SESSION']  = unserialize($session_data['data']);
+                    
+                    if($session_data['data'])
+                    $GLOBALS['_SESSION']  = @unserialize($session_data['data']);
                     $GLOBALS['_SESSION']['user_id'] = $session['userid'];
                     $GLOBALS['_SESSION']['admin_id'] = $session['adminid'];
                     $GLOBALS['_SESSION']['user_name'] = $session['user_name'];
@@ -195,6 +193,12 @@ class cls_session
 
     function update_session()
     {
+        static $i = 0;
+        
+        if($i !== 0)
+            return false;
+        $i = 1;
+        
         $adminid = !empty($GLOBALS['_SESSION']['admin_id']) ? intval($GLOBALS['_SESSION']['admin_id']) : 0;
         $userid  = !empty($GLOBALS['_SESSION']['user_id'])  ? intval($GLOBALS['_SESSION']['user_id'])  : 0;
         $user_name  = !empty($GLOBALS['_SESSION']['user_name'])  ? trim($GLOBALS['_SESSION']['user_name'])  : 0;
@@ -207,7 +211,8 @@ class cls_session
         unset($GLOBALS['_SESSION']['user_rank']);
         unset($GLOBALS['_SESSION']['discount']);
         unset($GLOBALS['_SESSION']['email']);
-
+        
+        if($GLOBALS['_SESSION'])
         $data        = serialize($GLOBALS['_SESSION']);
         $this->_time = time();
 
