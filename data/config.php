@@ -3,13 +3,8 @@
 $db_host   = "localhost:3306";
 
 // database name
-<<<<<<< HEAD
-$db_name   = "eshop";
-=======
 $db_name   = "myshop";
->>>>>>> 35536f805cd074869aa2154b8e183fd2a3daf5c0
 
-// database username
 $db_user   = "root";
 
 // database password

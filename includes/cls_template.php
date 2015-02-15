@@ -1,13 +1,13 @@
 <?php
 
 /**
- * ECSHOP Ä£°æÀà
+ * ECSHOP Ä£ï¿½ï¿½ï¿½ï¿½
  * ============================================================================
- * °æÈ¨ËùÓÐ 2005-2010 ÉÏº£ÉÌÅÉÍøÂç¿Æ¼¼ÓÐÏÞ¹«Ë¾£¬²¢±£ÁôËùÓÐÈ¨Àû¡£
- * ÍøÕ¾µØÖ·: http://www.ecshop.com£»
+ * ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ 2005-2010 ï¿½Ïºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½Õ¾ï¿½ï¿½Ö·: http://www.ecshop.comï¿½ï¿½
  * ----------------------------------------------------------------------------
- * Õâ²»ÊÇÒ»¸ö×ÔÓÉÈí¼þ£¡ÄúÖ»ÄÜÔÚ²»ÓÃÓÚÉÌÒµÄ¿µÄµÄÇ°ÌáÏÂ¶Ô³ÌÐò´úÂë½øÐÐÐÞ¸ÄºÍ
- * Ê¹ÓÃ£»²»ÔÊÐí¶Ô³ÌÐò´úÂëÒÔÈÎºÎÐÎÊ½ÈÎºÎÄ¿µÄµÄÔÙ·¢²¼¡£
+ * ï¿½â²»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ¿ï¿½Äµï¿½Ç°ï¿½ï¿½ï¿½Â¶Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Äºï¿½
+ * Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½Ê½ï¿½Îºï¿½Ä¿ï¿½Äµï¿½ï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½
  * ============================================================================
  * $Author: liuhui $
  * $Id: cls_template.php 17063 2010-03-25 06:35:46Z liuhui $
@@ -18,7 +18,7 @@ class cls_template
     var $template_dir   = '';
     var $cache_dir      = '';
     var $compile_dir    = '';
-    var $cache_lifetime = 3600; // »º´æ¸üÐÂÊ±¼ä, Ä¬ÈÏ 3600 Ãë
+    var $cache_lifetime = 3600; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½, Ä¬ï¿½ï¿½ 3600 ï¿½ï¿½
     var $direct_output  = false;
     var $caching        = false;
     var $template       = array();
@@ -35,8 +35,8 @@ class cls_template
     var $_foreachmark   = '';
     var $_seterror      = 0;
 
-    var $_temp_key      = array();  // ÁÙÊ±´æ·Å foreach Àï key µÄÊý×é
-    var $_temp_val      = array();  // ÁÙÊ±´æ·Å foreach Àï item µÄÊý×é
+    var $_temp_key      = array();  // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ foreach ï¿½ï¿½ key ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    var $_temp_val      = array();  // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ foreach ï¿½ï¿½ item ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     function __construct()
     {
@@ -59,7 +59,7 @@ class cls_template
     }
 
     /**
-     * ×¢²á±äÁ¿
+     * ×¢ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @access  public
      * @param   mix      $tpl_var
@@ -89,7 +89,7 @@ class cls_template
     }
 
     /**
-     * ÏÔÊ¾Ò³Ãæº¯Êý
+     * ï¿½ï¿½Ê¾Ò³ï¿½æº¯ï¿½ï¿½
      *
      * @access  public
      * @param   string      $filename
@@ -124,7 +124,7 @@ class cls_template
     }
 
     /**
-     * ´¦ÀíÄ£°åÎÄ¼þ
+     * ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½
      *
      * @access  public
      * @param   string      $filename
@@ -211,16 +211,16 @@ class cls_template
             error_reporting($this->_errorlevel);
         }
 
-        return $out; // ·µ»ØhtmlÊý¾Ý
+        return $out; // ï¿½ï¿½ï¿½ï¿½htmlï¿½ï¿½ï¿½ï¿½
     }
 
     /**
-     * ±àÒëÄ£°åº¯Êý
+     * ï¿½ï¿½ï¿½ï¿½Ä£ï¿½åº¯ï¿½ï¿½
      *
      * @access  public
      * @param   string      $filename
      *
-     * @return  sring        ±àÒëºóÎÄ¼þµØÖ·
+     * @return  sring        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö·
      */
     function make_compiled($filename)
     {
@@ -271,7 +271,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àí×Ö·û´®º¯Êý
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @access  public
      * @param   string     $source
@@ -285,11 +285,11 @@ class cls_template
             $source = $this->smarty_prefilter_preCompile($source);
         }
 
-        return preg_replace("/{([^\}\{\n]*)}/e", "\$this->select('\\1');", $source);
+        return preg_replace("/{([^\}\{\n]*)}/", "\$this->select('\\1');", $source);
     }
 
     /**
-     * ÅÐ¶ÏÊÇ·ñ»º´æ
+     * ï¿½Ð¶ï¿½ï¿½Ç·ñ»º´ï¿½
      *
      * @access  public
      * @param   string     $filename
@@ -346,7 +346,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àí{}±êÇ©
+     * ï¿½ï¿½ï¿½ï¿½{}ï¿½ï¿½Ç©
      *
      * @access  public
      * @param   string      $tag
@@ -361,15 +361,15 @@ class cls_template
         {
             return '{}';
         }
-        elseif ($tag{0} == '*' && substr($tag, -1) == '*') // ×¢ÊÍ²¿·Ö
+        elseif ($tag{0} == '*' && substr($tag, -1) == '*') // ×¢ï¿½Í²ï¿½ï¿½ï¿½
         {
             return '';
         }
-        elseif ($tag{0} == '$') // ±äÁ¿
+        elseif ($tag{0} == '$') // ï¿½ï¿½ï¿½ï¿½
         {
             return '<?php echo ' . $this->get_val(substr($tag, 1)) . '; ?>';
         }
-        elseif ($tag{0} == '/') // ½áÊø tag
+        elseif ($tag{0} == '/') // ï¿½ï¿½ï¿½ï¿½ tag
         {
             switch (substr($tag, 1))
             {
@@ -443,7 +443,7 @@ class cls_template
 
                     if ($t['value']{0} == '$')
                     {
-                        /* Èç¹û´«½øÀ´µÄÖµÊÇ±äÁ¿£¬¾Í²»ÓÃÓÃÒýºÅ */
+                        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
                         $tmp = '$this->assign(\'' . $t['var'] . '\',' . $t['value'] . ');';
                     }
                     else
@@ -524,7 +524,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àísmarty±êÇ©ÖÐµÄ±äÁ¿±êÇ©
+     * ï¿½ï¿½ï¿½ï¿½smartyï¿½ï¿½Ç©ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½Ç©
      *
      * @access  public
      * @param   string     $val
@@ -634,7 +634,7 @@ class cls_template
     }
 
     /**
-     * ´¦ÀíÈ¥µô$µÄ×Ö·û´®
+     * ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½$ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
      *
      * @access  public
      * @param   string     $val
@@ -677,7 +677,7 @@ class cls_template
     }
 
     /**
-     * ´¦ÀíinsertÍâ²¿º¯Êý/ÐèÒªincludeÔËÐÐµÄº¯ÊýµÄµ÷ÓÃÊý¾Ý
+     * ï¿½ï¿½ï¿½ï¿½insertï¿½â²¿ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½Òªincludeï¿½ï¿½ï¿½ÐµÄºï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @access  public
      * @param   string     $val
@@ -685,7 +685,7 @@ class cls_template
      *
      * @return  array
      */
-    function get_para($val, $type = 1) // ´¦ÀíinsertÍâ²¿º¯Êý/ÐèÒªincludeÔËÐÐµÄº¯ÊýµÄµ÷ÓÃÊý¾Ý
+    function get_para($val, $type = 1) // ï¿½ï¿½ï¿½ï¿½insertï¿½â²¿ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½Òªincludeï¿½ï¿½ï¿½ÐµÄºï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         $pa = $this->str_trim($val);
         foreach ($pa AS $value)
@@ -715,7 +715,7 @@ class cls_template
     }
 
     /**
-     * ÅÐ¶Ï±äÁ¿ÊÇ·ñ±»×¢²á²¢·µ»ØÖµ
+     * ï¿½Ð¶Ï±ï¿½ï¿½ï¿½ï¿½Ç·ï¿½×¢ï¿½á²¢ï¿½ï¿½ï¿½ï¿½Öµ
      *
      * @access  public
      * @param   string     $name
@@ -741,7 +741,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àíif±êÇ©
+     * ï¿½ï¿½ï¿½ï¿½ifï¿½ï¿½Ç©
      *
      * @access  public
      * @param   string     $tag_args
@@ -829,7 +829,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àíforeach±êÇ©
+     * ï¿½ï¿½ï¿½ï¿½foreachï¿½ï¿½Ç©
      *
      * @access  public
      * @param   string     $tag_args
@@ -892,7 +892,7 @@ class cls_template
     }
 
     /**
-     * ½« foreach µÄ key, item ·ÅÈëÁÙÊ±Êý×é
+     * ï¿½ï¿½ foreach ï¿½ï¿½ key, item ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
      *
      * @param  mixed    $key
      * @param  mixed    $val
@@ -912,7 +912,7 @@ class cls_template
     }
 
     /**
-     * µ¯³öÁÙÊ±Êý×éµÄ×îºóÒ»¸ö
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
      *
      * @return  void
      */
@@ -928,7 +928,7 @@ class cls_template
     }
 
     /**
-     * ´¦Àísmarty¿ªÍ·µÄÔ¤¶¨Òå±äÁ¿
+     * ï¿½ï¿½ï¿½ï¿½smartyï¿½ï¿½Í·ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @access  public
      * @param   array   $indexes
@@ -1044,19 +1044,19 @@ class cls_template
     function smarty_prefilter_preCompile($source)
     {
         $file_type = strtolower(strrchr($this->_current_file, '.'));
-        $tmp_dir   = 'themes/' . $GLOBALS['_CFG']['template'] . '/'; // Ä£°åËùÔÚÂ·¾¶
+        $tmp_dir   = 'themes/' . $GLOBALS['_CFG']['template'] . '/'; // Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 
         /**
-         * ´¦ÀíÄ£°åÎÄ¼þ
+         * ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ä¼ï¿½
          */
         if ($file_type == '.dwt')
         {
-            /* ½«Ä£°åÖÐËùÓÐlibraryÌæ»»ÎªÁ´½Ó */
+            /* ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½libraryï¿½æ»»Îªï¿½ï¿½ï¿½ï¿½ */
             $pattern     = '/<!--\s#BeginLibraryItem\s\"\/(.*?)\"\s-->.*?<!--\s#EndLibraryItem\s-->/se';
             $replacement = "'{include file='.strtolower('\\1'). '}'";
             $source      = preg_replace($pattern, $replacement, $source);
 
-            /* ¼ì²éÓÐÎÞ¶¯Ì¬¿âÎÄ¼þ£¬Èç¹ûÓÐÎªÆä¸³Öµ */
+            /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¶ï¿½Ì¬ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ä¸³Öµ */
             $dyna_libs = get_dyna_libs($GLOBALS['_CFG']['template'], $this->_current_file);
             if ($dyna_libs)
             {
@@ -1067,7 +1067,7 @@ class cls_template
                     if (preg_match($pattern, $source, $reg_match))
                     {
                         $reg_content = $reg_match[1];
-                        /* Éú³ÉÆ¥Åä×Ö´® */
+                        /* ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½ï¿½Ö´ï¿½ */
                         $keys = array_keys($libs);
                         $lib_pattern = '';
                         foreach ($keys AS $lib)
@@ -1075,52 +1075,52 @@ class cls_template
                             $lib_pattern .= '|' . str_replace('/', '\/', substr($lib, 1));
                         }
                         $lib_pattern = '/{include\sfile=(' . substr($lib_pattern, 1) . ')}/';
-                        /* ÐÞ¸Ä$reg_contentÖÐµÄÄÚÈÝ */
+                        /* ï¿½Þ¸ï¿½$reg_contentï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ */
                         $GLOBALS['libs'] = $libs;
                         $reg_content = preg_replace_callback($lib_pattern, 'dyna_libs_replace', $reg_content);
 
-                        /* ÓÃÐÞ¸Ä¹ýµÄÄÚÈÝÌæ»»Ô­À´µ±Ç°ÇøÓòÖÐÄÚÈÝ */
+                        /* ï¿½ï¿½ï¿½Þ¸Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»Ô­ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
                         $source = preg_replace($pattern, $reg_content, $source);
                     }
                 }
             }
 
-            /* ÔÚÍ·²¿¼ÓÈë°æ±¾ÐÅÏ¢ */
+            /* ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½Ï¢ */
             $source = preg_replace('/<head>/i', "<head>\r\n<meta name=\"Generator\" content=\"" . APPNAME .' ' . VERSION . "\" />",  $source);
 
-            /* ÐÞÕýcssÂ·¾¶ */
+            /* ï¿½ï¿½ï¿½ï¿½cssÂ·ï¿½ï¿½ */
             $source = preg_replace('/(<link\shref=["|\'])(?:\.\/|\.\.\/)?(css\/)?([a-z0-9A-Z_]+\.css["|\']\srel=["|\']stylesheet["|\']\stype=["|\']text\/css["|\'])/i','\1' . $tmp_dir . '\2\3', $source);
 
-            /* ÐÞÕýjsÄ¿Â¼ÏÂjsµÄÂ·¾¶ */
+            /* ï¿½ï¿½ï¿½ï¿½jsÄ¿Â¼ï¿½ï¿½jsï¿½ï¿½Â·ï¿½ï¿½ */
             $source = preg_replace('/(<script\s(?:type|language)=["|\']text\/javascript["|\']\ssrc=["|\'])(?:\.\/|\.\.\/)?(js\/[a-z0-9A-Z_\-\.]+\.(?:js|vbs)["|\']><\/script>)/', '\1' . $tmp_dir . '\2', $source);
 
-            /* ¸ü»»±àÒëÄ£°åµÄ±àÂëÀàÐÍ */
+            /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
             $source = preg_replace('/<meta\shttp-equiv=["|\']Content-Type["|\']\scontent=["|\']text\/html;\scharset=(?:.*?)["|\'][^>]*?>\r?\n?/i', '<meta http-equiv="Content-Type" content="text/html; charset=' . EC_CHARSET . '" />' . "\n", $source);
 
         }
 
         /**
-         * ´¦Àí¿âÎÄ¼þ
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
          */
          elseif ($file_type == '.lbi')
          {
-            /* È¥³ýmeta */
+            /* È¥ï¿½ï¿½meta */
             $source = preg_replace('/<meta\shttp-equiv=["|\']Content-Type["|\']\scontent=["|\']text\/html;\scharset=(?:.*?)["|\']>\r?\n?/i', '', $source);
          }
 
-        /* Ìæ»»ÎÄ¼þ±àÂëÍ·²¿ */
+        /* ï¿½æ»»ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ */
         if (strpos($source, "\xEF\xBB\xBF") !== FALSE)
         {
             $source = str_replace("\xEF\xBB\xBF", '', $source);
         }
 
         $pattern = array(
-            '/<!--[^>|\n]*?({.+?})[^<|{|\n]*?-->/', // Ìæ»»smarty×¢ÊÍ
-            '/<!--[^<|>|{|\n]*?-->/',               // Ìæ»»²»»»ÐÐµÄhtml×¢ÊÍ
-            '/(href=["|\'])\.\.\/(.*?)(["|\'])/i',  // Ìæ»»Ïà¶ÔÁ´½Ó
-            '/((?:background|src)\s*=\s*["|\'])(?:\.\/|\.\.\/)?(images\/.*?["|\'])/is', // ÔÚimagesÇ°¼ÓÉÏ $tmp_dir
-            '/((?:background|background-image):\s*?url\()(?:\.\/|\.\.\/)?(images\/)/is', // ÔÚimagesÇ°¼ÓÉÏ $tmp_dir
-            '/([\'|"])\.\.\//is', // ÒÔ../¿ªÍ·µÄÂ·¾¶È«²¿ÐÞÕýÎª¿Õ
+            '/<!--[^>|\n]*?({.+?})[^<|{|\n]*?-->/', // ï¿½æ»»smarty×¢ï¿½ï¿½
+            '/<!--[^<|>|{|\n]*?-->/',               // ï¿½æ»»ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½html×¢ï¿½ï¿½
+            '/(href=["|\'])\.\.\/(.*?)(["|\'])/i',  // ï¿½æ»»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            '/((?:background|src)\s*=\s*["|\'])(?:\.\/|\.\.\/)?(images\/.*?["|\'])/is', // ï¿½ï¿½imagesÇ°ï¿½ï¿½ï¿½ï¿½ $tmp_dir
+            '/((?:background|background-image):\s*?url\()(?:\.\/|\.\.\/)?(images\/)/is', // ï¿½ï¿½imagesÇ°ï¿½ï¿½ï¿½ï¿½ $tmp_dir
+            '/([\'|"])\.\.\//is', // ï¿½ï¿½../ï¿½ï¿½Í·ï¿½ï¿½Â·ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
             );
         $replace = array(
             '\1',
@@ -1133,7 +1133,7 @@ class cls_template
         return preg_replace($pattern, $replace, $source);
     }
 
-    function insert_mod($name) // ´¦Àí¶¯Ì¬ÄÚÈÝ
+    function insert_mod($name) // ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
     {
         list($fun, $para) = explode('|', $name);
         $para = unserialize($para);
@@ -1144,7 +1144,7 @@ class cls_template
 
     function str_trim($str)
     {
-        /* ´¦Àí'a=b c=d k = f 'Àà×Ö·û´®£¬·µ»ØÊý×é */
+        /* ï¿½ï¿½ï¿½ï¿½'a=b c=d k = f 'ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
         while (strpos($str, '= ') != 0)
         {
             $str = str_replace('= ', '=', $str);
