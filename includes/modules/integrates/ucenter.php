@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '1.x';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -50,20 +50,6 @@ if (isset($set_modules) && $set_modules == TRUE)
 require_once(ROOT_PATH . 'includes/modules/integrates/integrate.php');
 class ucenter extends integrate
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-    function __construct($cfg)
-    {
-        /* 使用默认数据库连接 */
-        $this->ucenter($cfg);
-    }
-
     /**
      * 构造函数
      *
@@ -207,7 +193,7 @@ class ucenter extends integrate
     }
 
     /*添加用户*/
-    function add_user($username, $password, $email)
+    function add_user($username, $password, $email, $gender = -1, $bday = 0, $reg_date=0, $md5password='')
     {
         /* 检测用户名 */
         if ($this->check_user($username))

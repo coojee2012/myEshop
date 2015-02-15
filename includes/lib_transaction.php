@@ -518,7 +518,7 @@ function save_consignee($consignee, $default=false)
     if ($consignee['address_id'] > 0)
     {
         /* 修改地址 */
-        $res = $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('user_address'), $consignee, 'UPDATE', 'address_id = ' . $consignee['address_id']);
+        $res = $GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('user_address'), $consignee, 'UPDATE', 'address_id = ' . $consignee['address_id']." AND `user_id`= '".$_SESSION['user_id']."'");
     }
     else
     {
@@ -929,7 +929,7 @@ function return_to_cart($order_id)
             'goods_price'   => $goods['goods_price'],
             'goods_number'  => $row['goods_number'],
             'goods_attr'    => empty($row['goods_attr']) ? '' : addslashes($row['goods_attr']),
-            'goods_attr_id'    => empty($row['goods_attr_id']) ? '' : $row['goods_attr_id'],
+            'goods_attr_id'    => empty($row['goods_attr_id']) ? '' : addslashes($row['goods_attr_id']),
             'is_real'       => $goods['is_real'],
             'extension_code'=> addslashes($goods['extension_code']),
             'parent_id'     => '0',

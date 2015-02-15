@@ -48,7 +48,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['pay_fee'] = '0';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -67,25 +67,8 @@ if (isset($set_modules) && $set_modules == TRUE)
  */
 class cod
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-      function __construct()
-    {
-        $this->cod();
-    }
+ 
 
-
-    function cod()
-    {
-    }
-
-  
     /**
      * 提交函数
      */

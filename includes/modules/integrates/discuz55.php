@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '5.5/6.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -52,11 +52,6 @@ class discuz55 extends integrate
 {
     var $cookie_prefix = '';
     var $authkey = '';
-
-    function __construct($cfg)
-    {
-        $this->discuz55($cfg);
-    }
 
     /**
      *

@@ -45,7 +45,7 @@ if (isset($set_modules) && $set_modules == true)
     $modules[$i]['is_online'] = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.99bill.com';
@@ -65,23 +65,6 @@ if (isset($set_modules) && $set_modules == true)
 
 class shenzhou
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-
-    function __construct()
-    {
-        $this->shenzhou();
-    }
-    function shenzhou()
-    {
-    }
-
 
    /**
      * 生成支付代码

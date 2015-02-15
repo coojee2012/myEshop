@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '2.0.x';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -51,11 +51,6 @@ require_once(ROOT_PATH . 'includes/modules/integrates/integrate.php');
 class phpbb extends integrate
 {
     var $cookie_prefix = '';
-
-    function __construct($cfg)
-    {
-        $this->phpbb($cfg);
-    }
 
     /**
      *
@@ -107,7 +102,7 @@ class phpbb extends integrate
      *
      * @return void
      */
-    function set_cookie ($username="")
+    function set_cookie($username="")
     {
         parent::set_cookie($username);
         if (empty($username))

@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '3.x';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -51,11 +51,6 @@ require_once(ROOT_PATH . 'includes/modules/integrates/integrate.php');
 class vbb extends integrate
 {
     var $cookie_salt = '';
-
-    function __construct($cfg)
-    {
-        $this->vbb($cfg);
-    }
 
     /**
      *

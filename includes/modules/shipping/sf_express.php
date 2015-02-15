@@ -46,7 +46,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';

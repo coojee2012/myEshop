@@ -109,20 +109,6 @@ class captcha
     }
 
     /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
-    function __construct($folder = '', $width = 145, $height = 20)
-    {
-        $this->captcha($folder, $width, $height);
-    }
-
-
-    /**
      * 检查给出的验证码是否和session中的一致
      *
      * @access  public

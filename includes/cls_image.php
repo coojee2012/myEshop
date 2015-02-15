@@ -37,11 +37,6 @@ class cls_image
     var $bgcolor     = '';
     var $type_maping = array(1 => 'image/gif', 2 => 'image/jpeg', 3 => 'image/png');
 
-    function __construct($bgcolor='')
-    {
-        $this->cls_image($bgcolor);
-    }
-
     function cls_image($bgcolor='')
     {
         if ($bgcolor)
@@ -675,7 +670,7 @@ class cls_image
      * @access      public
      * @return      int         可能的值为0，1，2
      */
-   static function gd_version()
+  static public function gd_version()
     {
         static $version = -1;
 

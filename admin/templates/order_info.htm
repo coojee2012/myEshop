@@ -38,7 +38,7 @@
     <caption><strong> {$lang.consignee} : {$address.consignee|escape} </strong></caption>
     <tr>
       <td> {$lang.email} </td>
-      <td> <a href="mailto:{$address.email}">{$address.email}</a> </td>
+      <td> <a href="mailto:{$address.email|escape}">{$address.email|escape}</a> </td>
     </tr>
     <tr>
       <td> {$lang.address} </td>

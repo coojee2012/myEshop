@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td align="right" class="first-cell" >{$lang.link_man}：</td>
-    <td>{$booking.link_man} {if $booking.email}<{$booking.email|escape}>{/if} </td>
+    <td>{$booking.link_man|escape} {if $booking.email}<{$booking.email|escape}>{/if} </td>
     <td align="right" class="first-cell" >{$lang.tel}：</td>
     <td>{$booking.tel|escape}</td>
   </tr>

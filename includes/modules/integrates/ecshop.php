@@ -27,16 +27,16 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['code']    = 'ecshop';
 
     /* 被整合的第三方程序的名称 */
-    $modules[$i]['name']    = 'SYSTEM';
+    $modules[$i]['name']    = 'ECSHOP';
 
     /* 被整合的第三方程序的版本 */
     $modules[$i]['version'] = '2.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.baidu.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     return;
 }
@@ -45,11 +45,6 @@ require_once(ROOT_PATH . 'includes/modules/integrates/integrate.php');
 class ecshop extends integrate
 {
     var $is_ecshop = 1;
-
-    function __construct($cfg)
-    {
-        $this->ecshop($cfg);
-    }
 
     /**
      *

@@ -9,8 +9,8 @@
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
- * $Author: yehuaixiao $
- * $Id: flow.php 17218 2011-01-24 04:10:41Z yehuaixiao $
+ * $Author: douqinghua $
+ * $Id: flow.php 17218 2011-01-24 04:10:41Z douqinghua $
  */
 
 define('IN_ECS', true);
@@ -133,6 +133,13 @@ if ($_REQUEST['step'] == 'add_to_cart')
     /* 更新：购物车 */
     else
     {
+        if(!empty($goods->spec))
+        {
+            foreach ($goods->spec as  $key=>$val )
+            {
+                $goods->spec[$key]=intval($val);
+            }
+        }
         // 更新：添加到购物车
         if (addto_cart($goods->goods_id, $goods->number, $goods->spec, $goods->parent))
         {
@@ -234,6 +241,7 @@ elseif ($_REQUEST['step'] == 'login')
                 }
             }
 
+            $_POST['password']=isset($_POST['password']) ? trim($_POST['password']) : '';
             if ($user->login($_POST['username'], $_POST['password'],isset($_POST['remember'])))
             {
                 update_user_info();  //更新用户信息
@@ -384,7 +392,6 @@ elseif ($_REQUEST['step'] == 'consignee')
             'mobile'        => empty($_POST['mobile'])     ? '' :   compile_str(make_semiangle(trim($_POST['mobile']))),
             'sign_building' => empty($_POST['sign_building']) ? '' :compile_str($_POST['sign_building']),
             'best_time'     => empty($_POST['best_time'])  ? '' :   compile_str($_POST['best_time']),
-
         );
 
         if ($_SESSION['user_id'] > 0)
@@ -1364,7 +1371,8 @@ elseif ($_REQUEST['step'] == 'done')
         exit;
     }
 
-$_POST['card_message'] = isset($_POST['card_message']) ? compile_str($_POST['card_message']) : '';
+    $_POST['how_oos'] = isset($_POST['how_oos']) ? intval($_POST['how_oos']) : 0;
+    $_POST['card_message'] = isset($_POST['card_message']) ? compile_str($_POST['card_message']) : '';
     $_POST['inv_type'] = !empty($_POST['inv_type']) ? compile_str($_POST['inv_type']) : '';
     $_POST['inv_payee'] = isset($_POST['inv_payee']) ? compile_str($_POST['inv_payee']) : '';
     $_POST['inv_content'] = isset($_POST['inv_content']) ? compile_str($_POST['inv_content']) : '';
@@ -2183,8 +2191,7 @@ function flow_update_cart($arr)
     foreach ($arr AS $key => $val)
     {
         $val = intval(make_semiangle($val));
-        
-if ($val <= 0 || !is_numeric($key))
+        if ($val <= 0 || !is_numeric($key))
         {
             continue;
         }
@@ -2318,8 +2325,7 @@ function flow_cart_stock($arr)
     foreach ($arr AS $key => $val)
     {
         $val = intval(make_semiangle($val));
-       if ($val <= 0 || !is_numeric($key))
-
+        if ($val <= 0 || !is_numeric($key))
         {
             continue;
         }

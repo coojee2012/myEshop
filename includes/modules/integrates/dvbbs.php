@@ -33,7 +33,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '1.0.x/2.0';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
     $modules[$i]['website'] = 'http://www.ecshop.com';
@@ -53,10 +53,6 @@ class dvbbs extends integrate
     var $cookie_prefix = '';
     var $authkey = '';
 
-    function __construct($cfg)
-    {
-        $this->dvbbs($cfg);
-    }
 
     /**
      *

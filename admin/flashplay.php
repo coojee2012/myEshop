@@ -875,7 +875,7 @@ function set_flash_data($tplname, &$msg)
         $flashdata[] = array(
                                 'src' => 'data/afficheimg/20081027xuorxj.jpg',
                                 'text' => 'ECShop',
-                                'url' =>'http://help.baidu.com/?doc-view-108.htm'
+                                'url' =>'http://help.ecshop.com/index.php?doc-view-108.htm'
                             );
     }
     switch($tplname)

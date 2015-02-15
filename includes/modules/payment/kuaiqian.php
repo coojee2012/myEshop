@@ -47,7 +47,7 @@ if (isset($set_modules) && $set_modules == true)
     $modules[$i]['is_online'] = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = '系统';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.99bill.com';
@@ -67,24 +67,7 @@ if (isset($set_modules) && $set_modules == true)
 
 class kuaiqian
 {
-    /**
-     * 构造函数
-     *
-     * @access  public
-     * @param
-     *
-     * @return void
-     */
- function __construct()
-    {
-        $this->kuaiqian();
-    }
-    
-    function kuaiqian()
-    {
-    }
-
-   
+  
 
    /**
      * 生成支付代码
