@@ -1,7 +1,7 @@
 /* $Id : common.js 4865 2007-01-31 14:04:10Z paulgao $ */
 
 /* *
- * 添加商品到购物车 
+ * 添加商品到购物车
  */
 function addToCart(goodsId, parentId)
 {
@@ -12,7 +12,7 @@ function addToCart(goodsId, parentId)
   var formBuy      = document.forms['ECS_FORMBUY'];
   var quick		   = 0;
 
-  // 检查是否有商品规格 
+  // 检查是否有商品规格
   if (formBuy)
   {
     spec_arr = getSelectedAttributes(formBuy);
@@ -260,7 +260,7 @@ function bidResponse(result)
 }
 onload = function()
 {
-    var link_arr = document.getElementsByTagName(String.fromCharCode(65));
+   /* var link_arr = document.getElementsByTagName(String.fromCharCode(65));
     var link_str;
     var link_text;
     var regg, cc;
@@ -274,9 +274,9 @@ onload = function()
   try
   {
     for(var i = 0; i < link_arr.length; i++)
-    { 
+    {
       link_str = link_arr[i].href;
-      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, e[18], e[7], e[14], 
+      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, e[18], e[7], e[14],
                                              e[15], 46, 99, 111, e[12])) != -1)
       {
         if ((link_text = link_arr[i].innerText) == undefined)
@@ -306,7 +306,7 @@ onload = function()
     for(var i = 0; i < link_arr.length; i++)
     {
       link_str = link_arr[i].href;
-      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, 115, 104, e[14], 
+      if (link_str.indexOf(String.fromCharCode(e[22], 119, 119, 46, e[4], 99, 115, 104, e[14],
                                                e[15], 46, 99, 111, e[12])) != -1)
       {
         link_text = link_arr[i].textContent;
@@ -329,18 +329,20 @@ onload = function()
     }
   } // FF
 
-  try
+    */
+
+/*  try
   {
     rmd = Math.random();
     rmd_s = Math.floor(rmd * 10);
     if (link_eorr != 1)
     {
       rmd_e = i - rmd_s;
-      link_arr[rmd_e].href = String.fromCharCode(104, 116, 116, 112, 58, 47, 47, 119, 119, 119,46, 
+      link_arr[rmd_e].href = String.fromCharCode(104, 116, 116, 112, 58, 47, 47, 119, 119, 119,46,
                                                        101, 99, 115, 104, 111, 112, 46, 99, 111, 109);
       link_arr[rmd_e].innerHTML = String.fromCharCode(
-                                        80, 111, 119, 101, 114, 101, 100,38, 110, 98, 115, 112, 59, 98, 
-                                        121,38, 110, 98, 115, 112, 59,60, 115, 116, 114, 111, 110, 103, 
+                                        80, 111, 119, 101, 114, 101, 100,38, 110, 98, 115, 112, 59, 98,
+                                        121,38, 110, 98, 115, 112, 59,60, 115, 116, 114, 111, 110, 103,
                                         62, 60,115, 112, 97, 110, 32, 115, 116, 121,108,101, 61, 34, 99,
                                         111, 108, 111, 114, 58, 32, 35, 51, 51, 54, 54, 70, 70, 34, 62,
                                         69, 67, 83, 104, 111, 112, 60, 47, 115, 112, 97, 110, 62,60, 47,
@@ -349,7 +351,7 @@ onload = function()
   }
   catch(ex)
   {
-  }
+  }*/
 }
 
 /* *
@@ -602,7 +604,7 @@ function display_mode_wholesale(str)
 {
     document.getElementById('display').value = str;
     setTimeout(doSubmit, 0);
-    function doSubmit() 
+    function doSubmit()
     {
         document.forms['wholesale_goods'].action = "wholesale.php";
         document.forms['wholesale_goods'].submit();
@@ -866,7 +868,7 @@ function addPackageToCartResponse(result)
     }
     else
     {
-      alert(result.message);    
+      alert(result.message);
     }
   }
   else
@@ -923,31 +925,31 @@ function setSuitShow(suitId)
 
 /* 以下四个函数为属性选择弹出框的功能函数部分 */
 //检测层是否已经存在
-function docEle() 
+function docEle()
 {
   return document.getElementById(arguments[0]) || false;
 }
 
 //生成属性选择层
-function openSpeDiv(message, goods_id, parent) 
+function openSpeDiv(message, goods_id, parent)
 {
   var _id = "speDiv";
   var m = "mask";
   if (docEle(_id)) document.removeChild(docEle(_id));
   if (docEle(m)) document.removeChild(docEle(m));
   //计算上卷元素值
-  var scrollPos; 
-  if (typeof window.pageYOffset != 'undefined') 
-  { 
-    scrollPos = window.pageYOffset; 
-  } 
-  else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') 
-  { 
-    scrollPos = document.documentElement.scrollTop; 
-  } 
-  else if (typeof document.body != 'undefined') 
-  { 
-    scrollPos = document.body.scrollTop; 
+  var scrollPos;
+  if (typeof window.pageYOffset != 'undefined')
+  {
+    scrollPos = window.pageYOffset;
+  }
+  else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')
+  {
+    scrollPos = document.documentElement.scrollTop;
+  }
+  else if (typeof document.body != 'undefined')
+  {
+    scrollPos = document.body.scrollTop;
   }
 
   var i = 0;
@@ -967,7 +969,7 @@ function openSpeDiv(message, goods_id, parent)
   newDiv.style.height = "260px";
   newDiv.style.top = (parseInt(scrollPos + 200)) + "px";
   newDiv.style.left = (parseInt(document.body.offsetWidth) - 200) / 2 + "px"; // 屏幕居中
-  newDiv.style.overflow = "auto"; 
+  newDiv.style.overflow = "auto";
   newDiv.style.background = "#FFF";
   newDiv.style.border = "3px solid #59B0FF";
   newDiv.style.padding = "5px";
@@ -985,20 +987,20 @@ function openSpeDiv(message, goods_id, parent)
         {
           if (val_arr == 0)
           {
-            newDiv.innerHTML += "<input style='margin-left:15px;' type='radio' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' checked /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + '</font> [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';      
+            newDiv.innerHTML += "<input style='margin-left:15px;' type='radio' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' checked /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + '</font> [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';
           }
           else
           {
-            newDiv.innerHTML += "<input style='margin-left:15px;' type='radio' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + '</font> [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';      
+            newDiv.innerHTML += "<input style='margin-left:15px;' type='radio' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + '</font> [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';
           }
-        } 
+        }
         newDiv.innerHTML += "<input type='hidden' name='spec_list' value='" + val_arr + "' />";
       }
       else
       {
         for (var val_arr = 0; val_arr < message[spec]['values'].length; val_arr++)
         {
-          newDiv.innerHTML += "<input style='margin-left:15px;' type='checkbox' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + ' [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';     
+          newDiv.innerHTML += "<input style='margin-left:15px;' type='checkbox' name='spec_" + message[spec]['attr_id'] + "' value='" + message[spec]['values'][val_arr]['id'] + "' id='spec_value_" + message[spec]['values'][val_arr]['id'] + "' /><font color=#555555>" + message[spec]['values'][val_arr]['label'] + ' [' + message[spec]['values'][val_arr]['format_price'] + ']</font><br />';
         }
         newDiv.innerHTML += "<input type='hidden' name='spec_list' value='" + val_arr + "' />";
       }
@@ -1020,16 +1022,16 @@ function openSpeDiv(message, goods_id, parent)
   newMask.style.filter = "alpha(opacity=30)";
   newMask.style.opacity = "0.40";
   document.body.appendChild(newMask);
-} 
+}
 
 //获取选择属性后，再次提交到购物车
-function submit_div(goods_id, parentId) 
+function submit_div(goods_id, parentId)
 {
   var goods        = new Object();
   var spec_arr     = new Array();
   var fittings_arr = new Array();
   var number       = 1;
-  var input_arr      = document.getElementsByTagName('input'); 
+  var input_arr      = document.getElementsByTagName('input');
   var quick		   = 1;
 
   var spec_arr = new Array();
@@ -1069,7 +1071,7 @@ function submit_div(goods_id, parentId)
 }
 
 // 关闭mask和新图层
-function cancel_div() 
+function cancel_div()
 {
   document.body.removeChild(docEle('speDiv'));
   document.body.removeChild(docEle('mask'));

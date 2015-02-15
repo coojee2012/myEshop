@@ -1115,7 +1115,7 @@ class cls_template
             }
 
             /* åœ¨å¤´éƒ¨åŠ å…¥ç‰ˆæœ¬ä¿¡æ¯ */
-            $source = preg_replace('/<head>/i', "<head>\r\n<meta name=\"Generator\" content=\"" . APPNAME .' ' . VERSION . "\" />",  $source);
+            //$source = preg_replace('/<head>/i', "<head>\r\n<meta name=\"Generator\" content=\"" . APPNAME .' ' . VERSION . "\" />",  $source);
 
             /* ä¿®æ­£cssè·¯å¾„ */
             $source = preg_replace('/(<link\shref=["|\'])(?:\.\/|\.\.\/)?(css\/)?([a-z0-9A-Z_]+\.css["|\']\srel=["|\']stylesheet["|\']\stype=["|\']text\/css["|\'])/i','\1' . $tmp_dir . '\2\3', $source);
