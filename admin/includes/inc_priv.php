@@ -86,7 +86,7 @@ if (!defined('IN_ECS'))
     $purview['sitemap']              = 'sitemap';
     $purview['check_file_priv']      = 'file_priv';
     $purview['captcha_manage']       = 'shop_config';
-    $purview['file_check']           = 'file_check';
+    //$purview['file_check']           = 'file_check';
     $purview['navigator']            = 'navigator';
     $purview['flashplay']            = 'flash_manage';
     $purview['ucenter_setup']        = 'integrate_users';
@@ -120,7 +120,7 @@ if (!defined('IN_ECS'))
 
 
 //模板管理
-    $purview['02_template_select']   = 'template_select';
+   // $purview['02_template_select']   = 'template_select';
     $purview['03_template_setup']    = 'template_setup';
     $purview['04_template_library']  = 'library_manage';
     $purview['05_edit_languages']    = 'lang_edit';
